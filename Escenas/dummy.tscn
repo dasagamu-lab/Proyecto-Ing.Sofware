@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://vrsqb6yfs2s8"]
+
+[ext_resource type="Script" uid="uid://deup8xujdibng" path="res://dummy.gd" id="1_e876k"]
+[ext_resource type="Texture2D" uid="uid://ctxutts5tyhxu" path="res://Assets/Sprites/craftpix-net-211148-free-fantasy-chibi-female-sprites-pixel-art/Musketeer/Dead.png" id="1_xmspm"]
+[ext_resource type="Texture2D" uid="uid://bx3tdi1cx7rmx" path="res://Assets/Sprites/craftpix-net-211148-free-fantasy-chibi-female-sprites-pixel-art/Musketeer/Idle.png" id="2_0umox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1324b"]
+size = Vector2(14, 27)
+
+[sub_resource type="Animation" id="Animation_stcs8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_xmspm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0lhgj"]
+resource_name = "dano"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_xmspm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333334, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_k6daa"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0umox")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxv83"]
+_data = {
+&"RESET": SubResource("Animation_stcs8"),
+&"dano": SubResource("Animation_0lhgj"),
+&"idle": SubResource("Animation_k6daa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e876k"]
+size = Vector2(14, 26)
+
+[node name="Dummy" type="CharacterBody2D" unique_id=1450652987 groups=["ataque_enemigo"]]
+script = ExtResource("1_e876k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=266102235]
+texture_filter = 1
+position = Vector2(32, -34)
+scale = Vector2(0.6154906, 0.5507812)
+texture = ExtResource("1_xmspm")
+flip_h = true
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=779204003]
+position = Vector2(32, -15)
+shape = SubResource("RectangleShape2D_1324b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=104344950]
+libraries/ = SubResource("AnimationLibrary_fxv83")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=17974573]
+
+[node name="Hurtbox_Dummy" type="CollisionShape2D" parent="Area2D" unique_id=1744066130]
+light_mask = 2
+position = Vector2(32, -15)
+shape = SubResource("RectangleShape2D_e876k")
