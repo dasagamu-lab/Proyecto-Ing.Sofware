@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://djwoe45il4a7f"]
+[gd_scene format=3 uid="uid://culk1k2heih3c"]
 
-[ext_resource type="Script" uid="uid://cdbradds8r85d" path="res://Scripts/lum.gd" id="1_5qujy"]
-[ext_resource type="Texture2D" uid="uid://k8e6jshg7ds5" path="res://Assets/Sprites/Jugadores/Lum/IDLE.png" id="2_5qujy"]
-[ext_resource type="Texture2D" uid="uid://br3phpkffwq3u" path="res://Assets/Sprites/Jugadores/Lum/RUN.png" id="2_q211s"]
-[ext_resource type="Texture2D" uid="uid://248jyhvr5dkt" path="res://Assets/Sprites/Jugadores/Lum/HURT.png" id="3_ier8g"]
-[ext_resource type="Texture2D" uid="uid://c2tokro2cfrqr" path="res://Assets/Sprites/Jugadores/Lum/Ataque.png" id="3_lwklf"]
-[ext_resource type="Texture2D" uid="uid://tgy2g8jmbv2s" path="res://Assets/Sprites/Jugadores/Lum/Ataque2.png" id="3_q61et"]
-[ext_resource type="Texture2D" uid="uid://d2aqvkv43mnhl" path="res://Assets/Sprites/Jugadores/Lum/Bloqueo.png" id="4_q61et"]
-[ext_resource type="Texture2D" uid="uid://ceddgdik34vpb" path="res://Assets/Sprites/Jugadores/Lum/Salto.png" id="5_lwklf"]
+[ext_resource type="Texture2D" uid="uid://27ymeur7704j" path="res://Assets/Sprites/Jugadores/Tenku/idleTenku2.png" id="1_5jc8g"]
+[ext_resource type="Script" uid="uid://cdbradds8r85d" path="res://Scripts/lum.gd" id="1_j8ehd"]
+[ext_resource type="Texture2D" uid="uid://8p3g8meickpn" path="res://Assets/Sprites/Jugadores/Tenku/Ataque1.png" id="3_3oc2p"]
+[ext_resource type="Texture2D" uid="uid://tgy2g8jmbv2s" path="res://Assets/Sprites/Jugadores/Lum/Ataque2.png" id="3_xiuab"]
+[ext_resource type="Texture2D" uid="uid://01nw4cptxa0c" path="res://Assets/Sprites/Jugadores/Tenku/Bloqueo.png" id="5_3oc2p"]
+[ext_resource type="Texture2D" uid="uid://cnyso3h0skqd" path="res://Assets/Sprites/Jugadores/Tenku/HURT.png" id="6_3oc2p"]
+[ext_resource type="Texture2D" uid="uid://6tbhk1a3d1us" path="res://Assets/Sprites/Jugadores/Tenku/RUN1T.png" id="8_3oc2p"]
+[ext_resource type="Texture2D" uid="uid://ceddgdik34vpb" path="res://Assets/Sprites/Jugadores/Lum/Salto.png" id="8_oiqdg"]
 
 [sub_resource type="Animation" id="Animation_5qujy"]
 resource_name = "Ataque1"
-length = 1.5333333
+length = 3.6666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_lwklf")]
+"values": [ExtResource("3_3oc2p")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -43,22 +43,10 @@ tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.46666667, 0.6666667, 0.9, 1.0666667, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.36666667, 0.7, 1.0666667, 1.4666667, 1.8, 2.1666667, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [1, 2, 2, 3, 4, 5, 6]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Ataque1/Colision:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.30235225, 0.5045168, 0.71025944, 0.9006818, 1.0698638, 1.30661),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, true, false, false]
+"values": [0, 1, 2, 3, 4, 4, 5, 6]
 }
 
 [sub_resource type="Animation" id="Animation_ier8g"]
@@ -74,7 +62,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_q61et")]
+"values": [ExtResource("3_xiuab")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,7 +103,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ytorc"]
 resource_name = "Bloqueo"
-length = 2.1
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -126,7 +114,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_q61et")]
+"values": [ExtResource("5_3oc2p")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -147,7 +135,7 @@ tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.6333332),
+"times": PackedFloat32Array(0, 1.3333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -166,7 +154,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_ier8g")]
+"values": [ExtResource("6_3oc2p")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -195,7 +183,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_lwklf"]
 resource_name = "Idle"
-length = 2.3333333
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -207,7 +195,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_5qujy")]
+"values": [ExtResource("1_5jc8g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -228,73 +216,10 @@ tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.5, 0.7, 0.93333334, 1.2, 1.4666667, 1.7, 1.9333333, 2.2),
+"times": PackedFloat32Array(-0.06666667, 0.26666668, 0.6, 0.9, 1.2, 1.4666667, 1.7666667, 2.1, 2.4, 2.6666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_q211s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_lwklf")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [7]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Ataque1/Colision:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Ataque2/Colision2:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_0mgt3"]
@@ -310,7 +235,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_q211s")]
+"values": [ExtResource("8_3oc2p")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -350,7 +275,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(10),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_lwklf")]
+"values": [ExtResource("8_oiqdg")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -384,7 +309,6 @@ _data = {
 &"Bloqueo": SubResource("Animation_ytorc"),
 &"Daño": SubResource("Animation_q61et"),
 &"Idle": SubResource("Animation_lwklf"),
-&"RESET": SubResource("Animation_q211s"),
 &"Run": SubResource("Animation_0mgt3"),
 &"Salto": SubResource("Animation_cvgho")
 }
@@ -393,7 +317,7 @@ _data = {
 size = Vector2(12.5, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwklf"]
-size = Vector2(29.125, 62)
+size = Vector2(28.25, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ier8g"]
 size = Vector2(40.25, 90)
@@ -401,20 +325,19 @@ size = Vector2(40.25, 90)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qujy"]
 size = Vector2(13, 54)
 
-[node name="Lum" type="CharacterBody2D" unique_id=1033325423]
-script = ExtResource("1_5qujy")
+[node name="Tenku" type="CharacterBody2D" unique_id=1033325423]
+script = ExtResource("1_j8ehd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1496050262]
 texture_filter = 1
-position = Vector2(100, -161.00002)
+position = Vector2(91.99999, -161)
 scale = Vector2(1.6577846, 1.9622391)
-texture = ExtResource("3_lwklf")
-hframes = 7
-frame = 1
+texture = ExtResource("6_3oc2p")
+hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=494844234]
 libraries/ = SubResource("AnimationLibrary_0mgt3")
-speed_scale = 4.0
+speed_scale = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=98892891]
 position = Vector2(231, -130)
@@ -436,7 +359,7 @@ position = Vector2(99, -126)
 
 [node name="Colision" type="CollisionShape2D" parent="Ataque1" unique_id=1462090314]
 visibility_layer = 2
-position = Vector2(46.4375, 0)
+position = Vector2(62.875, 0)
 shape = SubResource("RectangleShape2D_lwklf")
 debug_color = Color(0.88908136, 0.00029436767, 0.80652136, 0.41960785)
 
@@ -444,11 +367,11 @@ debug_color = Color(0.88908136, 0.00029436767, 0.80652136, 0.41960785)
 
 [node name="Colision2" type="CollisionShape2D" parent="Ataque2" unique_id=133514248]
 visibility_layer = 2
-position = Vector2(141, -140)
+position = Vector2(156.875, -140)
 shape = SubResource("RectangleShape2D_ier8g")
 debug_color = Color(1.732707e-06, 0.61993974, 0.56895036, 0.41960785)
 
-[node name="Hitbox_Lum" type="CollisionShape2D" parent="." unique_id=1266122223]
+[node name="Hitbox_Tenku" type="CollisionShape2D" parent="." unique_id=1266122223]
 position = Vector2(100.5, -123)
 shape = SubResource("RectangleShape2D_5qujy")
 debug_color = Color(6.3532593e-06, 0.5850608, 0.7804934, 0.41960785)

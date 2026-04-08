@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://davudjgnpsumo"]
 
-[ext_resource type="Texture2D" uid="uid://duskkla7op1sv" path="res://Assets/Sprites/sierv.png" id="1_6oqq8"]
+[ext_resource type="Texture2D" uid="uid://duskkla7op1sv" path="res://Assets/Sprites/Jugadores/Sierv/sierv.png" id="1_6oqq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wliwh"]
 size = Vector2(22, 29)
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [8]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_wliwh"]
@@ -54,7 +54,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_x0ydv"]
 resource_name = "walk"
-length = 1.3333334
+length = 1.2333333
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,7 +63,7 @@ tracks/0/path = NodePath("Sierv:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.43333334, 0.6666667, 0.9, 1.1),
+"times": PackedFloat32Array(0.06666667, 0.23333333, 0.43333334, 0.6666667, 0.8333333, 1.0333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [4, 5, 6, 7, 6, 5]
@@ -84,7 +85,6 @@ texture_filter = 1
 texture = ExtResource("1_6oqq8")
 hframes = 4
 vframes = 4
-frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523455008]
 position = Vector2(-14, 6.5)

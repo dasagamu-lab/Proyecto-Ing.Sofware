@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vrsqb6yfs2s8"]
 
-[ext_resource type="Script" uid="uid://deup8xujdibng" path="res://dummy.gd" id="1_e876k"]
+[ext_resource type="Script" uid="uid://deup8xujdibng" path="res://Scripts/dummy.gd" id="1_e876k"]
 [ext_resource type="Texture2D" uid="uid://ctxutts5tyhxu" path="res://Assets/Sprites/craftpix-net-211148-free-fantasy-chibi-female-sprites-pixel-art/Musketeer/Dead.png" id="1_xmspm"]
 [ext_resource type="Texture2D" uid="uid://bx3tdi1cx7rmx" path="res://Assets/Sprites/craftpix-net-211148-free-fantasy-chibi-female-sprites-pixel-art/Musketeer/Idle.png" id="2_0umox"]
 

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdym65fglfqpm" path="res://Assets/Sprites/Mapa/midground_/spring_.png" id="1_habko"]
 [ext_resource type="PackedScene" uid="uid://djwoe45il4a7f" path="res://Escenas/Lum.tscn" id="2_3db5g"]
 [ext_resource type="PackedScene" uid="uid://vrsqb6yfs2s8" path="res://Escenas/dummy.tscn" id="3_rj58i"]
+[ext_resource type="PackedScene" uid="uid://culk1k2heih3c" path="res://Escenas/Tenku.tscn" id="4_3db5g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64r2g"]
 texture = ExtResource("1_habko")
@@ -222,3 +223,6 @@ position = Vector2(-1, 42)
 
 [node name="Dummy" parent="." unique_id=1450652987 instance=ExtResource("3_rj58i")]
 position = Vector2(289, -53)
+
+[node name="Tenku" parent="." unique_id=1414779902 instance=ExtResource("4_3db5g")]
+position = Vector2(104, 42)
