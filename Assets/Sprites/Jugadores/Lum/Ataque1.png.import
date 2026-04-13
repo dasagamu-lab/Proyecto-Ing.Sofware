@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s5ahd5si1d38"
-path="res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"
+uid="uid://cwmfby45ixwdk"
+path="res://.godot/imported/Ataque1.png-7a2f1c156de8f7223443e89fb20aff81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jugadores/Sierv/sierv.png"
-dest_files=["res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"]
+source_file="res://Assets/Sprites/Jugadores/Lum/Ataque1.png"
+dest_files=["res://.godot/imported/Ataque1.png-7a2f1c156de8f7223443e89fb20aff81.ctex"]
 
 [params]
 

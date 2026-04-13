@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s5ahd5si1d38"
-path="res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"
+uid="uid://b7idbglcnufn7"
+path="res://.godot/imported/HURT.png-c9e7ba32d5c5aa1655a84caa97dc59a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jugadores/Sierv/sierv.png"
-dest_files=["res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"]
+source_file="res://Assets/Sprites/Jugadores/Sierv/HURT.png"
+dest_files=["res://.godot/imported/HURT.png-c9e7ba32d5c5aa1655a84caa97dc59a2.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # --- VARIABLES ---
-var salud = 60
+var salud = 100
 var esta_muerto = false
 
 # --- REFERENCIAS ---

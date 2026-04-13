@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s5ahd5si1d38"
-path="res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"
+uid="uid://doi5nbnx1us6j"
+path="res://.godot/imported/Idle.png-5a6ce3f10092265ec052323e8097f5ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jugadores/Sierv/sierv.png"
-dest_files=["res://.godot/imported/sierv.png-7b03f47476f7bac0e0663a3199192b2f.ctex"]
+source_file="res://Assets/Sprites/Jugadores/Sierv/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-5a6ce3f10092265ec052323e8097f5ad.ctex"]
 
 [params]
 
