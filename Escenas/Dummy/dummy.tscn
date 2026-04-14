@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://e5reckdw2wso"]
+
+[ext_resource type="Texture2D" uid="uid://d1vo8kjk3m5jg" path="res://Assets/Gráficos/Dummy/1.png" id="1_3l5gb"]
+[ext_resource type="Script" uid="uid://i33hi0phgyld" path="res://Escenas/Dummy/dummy.gd" id="1_ls61x"]
+[ext_resource type="Texture2D" uid="uid://c0oolfs4qjimq" path="res://Assets/Gráficos/Dummy/2.png" id="2_ye6wy"]
+[ext_resource type="Texture2D" uid="uid://cx7a5c4ryjy5w" path="res://Assets/Gráficos/Dummy/3.png" id="3_esgbc"]
+[ext_resource type="Texture2D" uid="uid://c578wycwjkec0" path="res://Assets/Gráficos/Dummy/4.png" id="4_mpbwv"]
+[ext_resource type="Texture2D" uid="uid://blc3bwxefsofm" path="res://Assets/Gráficos/Dummy/5.png" id="5_w3v5p"]
+[ext_resource type="Texture2D" uid="uid://dw5kukf75xxbf" path="res://Assets/Gráficos/Dummy/6.png" id="6_l3088"]
+[ext_resource type="Texture2D" uid="uid://bpiqt6rwpip12" path="res://Assets/Gráficos/Dummy/7.png" id="7_gkwur"]
+[ext_resource type="Texture2D" uid="uid://clopis2rcbuiq" path="res://Assets/Gráficos/Dummy/8.png" id="8_yu1vq"]
+[ext_resource type="Texture2D" uid="uid://b53xuofl2ed7o" path="res://Assets/Gráficos/Dummy/9.png" id="9_srf1d"]
+[ext_resource type="Texture2D" uid="uid://ypdjotyh58w" path="res://Assets/Gráficos/Dummy/10.png" id="10_kr7ie"]
+[ext_resource type="Texture2D" uid="uid://6hgnbnq6llbw" path="res://Assets/Gráficos/Dummy/11.png" id="11_qhfps"]
+[ext_resource type="Texture2D" uid="uid://bjurjgjq2yrfu" path="res://Assets/Gráficos/Dummy/12.png" id="12_twjq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf018"]
+size = Vector2(16, 22)
+
+[sub_resource type="Animation" id="Animation_rb4un"]
+resource_name = "Hit"
+length = 1.10001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ye6wy"), ExtResource("3_esgbc"), ExtResource("4_mpbwv"), ExtResource("5_w3v5p"), ExtResource("6_l3088"), ExtResource("7_gkwur"), ExtResource("8_yu1vq"), ExtResource("9_srf1d"), ExtResource("10_kr7ie"), ExtResource("11_qhfps"), ExtResource("12_twjq0")]
+}
+
+[sub_resource type="Animation" id="Animation_3hf5v"]
+resource_name = "Idle"
+length = 0.10001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_3l5gb")]
+}
+
+[sub_resource type="Animation" id="Animation_ph2o2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_3l5gb")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjjlv"]
+_data = {
+&"Hit": SubResource("Animation_rb4un"),
+&"Idle": SubResource("Animation_3hf5v"),
+&"RESET": SubResource("Animation_ph2o2")
+}
+
+[node name="Dummy" type="Area2D" unique_id=918930980]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_ls61x")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=243954415]
+shape = SubResource("RectangleShape2D_pf018")
+debug_color = Color(0.990258, 0, 0.280561, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=152648217]
+texture_filter = 1
+texture = ExtResource("1_3l5gb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=461146927]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_bjjlv")
+autoplay = &"Idle"
+speed_scale = 2.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
