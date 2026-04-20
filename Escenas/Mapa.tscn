@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djwoe45il4a7f" path="res://Escenas/Lum.tscn" id="2_3db5g"]
 [ext_resource type="PackedScene" uid="uid://vrsqb6yfs2s8" path="res://Escenas/dummy.tscn" id="3_rj58i"]
 [ext_resource type="PackedScene" uid="uid://culk1k2heih3c" path="res://Escenas/Tenku.tscn" id="4_3db5g"]
-[ext_resource type="PackedScene" uid="uid://b5d1hbf5rpmxw" path="res://Escenas/Sierv.tscn" id="5_rj58i"]
+[ext_resource type="PackedScene" uid="uid://b5d1hbf5rpmxw" path="res://Escenas/sierv.tscn" id="5_rj58i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64r2g"]
 texture = ExtResource("1_habko")
