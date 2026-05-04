@@ -1,7 +1,10 @@
 VERSIÓN PROTOTIPO
   * Ejecutable en desarrollo
+
 Fighters Infinte
-  Integrantes:
+
+ Integrantes:
+	
       Jefferson Stiven Rios Castillo
       Roger Enrique Barros Martinez
       Jhoan Nicolas Hernandez Cruz
