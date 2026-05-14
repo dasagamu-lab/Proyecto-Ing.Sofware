@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d01okydmpf616" path="res://Assets/Gráficos/Lum/Atack1/Atack1_1.png" id="18_xdm6o"]
 [ext_resource type="Texture2D" uid="uid://dbn23h2tcstfx" path="res://Assets/Gráficos/Lum/Atack1/Atack1_2.png" id="19_vhrbh"]
 [ext_resource type="Texture2D" uid="uid://cfd576ftnxf5n" path="res://Assets/Gráficos/Lum/Atack1/Atack1_3.png" id="20_a3q0i"]
+[ext_resource type="Texture2D" uid="uid://duldj6vpkfj1f" path="res://Assets/Gráficos/Lum/Block/Block_1.png" id="20_xdm6o"]
 [ext_resource type="Texture2D" uid="uid://cdvvyac5uu6cu" path="res://Assets/Gráficos/Lum/Atack1/Atack1_4.png" id="21_4vb42"]
+[ext_resource type="Texture2D" uid="uid://csiebt13qc30v" path="res://Assets/Gráficos/Lum/Block/Block_2.png" id="21_vhrbh"]
 [ext_resource type="Texture2D" uid="uid://b60wf8k27b7y4" path="res://Assets/Gráficos/Lum/Atack1/Atack1_5.png" id="22_utrqe"]
 [ext_resource type="Texture2D" uid="uid://sobcx4y4hqls" path="res://Assets/Gráficos/Lum/Atack1/Atack1_6.png" id="23_v5uto"]
 [ext_resource type="Texture2D" uid="uid://bmvl1o57vs70t" path="res://Assets/Gráficos/Lum/Atack1/Atack1_7.png" id="24_i411i"]
@@ -193,6 +195,30 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_xdm6o"]
 resource_name = "Bloqueo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("20_xdm6o"), ExtResource("21_vhrbh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_vhrbh"]
 resource_name = "Dash_Air"
@@ -553,13 +579,13 @@ disabled = true
 debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
 
 [node name="Ataque_2" type="CollisionShape2D" parent="Col_Daño" unique_id=1141034330]
-position = Vector2(20, -8)
+position = Vector2(30, 3)
 shape = SubResource("RectangleShape2D_71jhd")
 disabled = true
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
 [node name="Ataque_Especial" type="CollisionShape2D" parent="Col_Daño" unique_id=2132119326]
-position = Vector2(40, 1)
+position = Vector2(28, 3)
 shape = SubResource("RectangleShape2D_wrfa5")
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
