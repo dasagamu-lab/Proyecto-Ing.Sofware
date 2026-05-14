@@ -1,12 +1,11 @@
-Proyecto ingenierira
+VERSIÓN PROTOTIPO
+  * Ejecutable en desarrollo
 
-Integrantes
+Fighters Infinte
 
-Jefferson Rios,
-David Garcia,
-Roger Barros,
-Jhoan Hernandez.
-
-Nombre del proyecto
-
-INFINITE FIGHTERS
+ Integrantes:
+	
+      Jefferson Stiven Rios Castillo
+      Roger Enrique Barros Martinez
+      Jhoan Nicolas Hernandez Cruz
+      David Santiago Garcia Muñoz
