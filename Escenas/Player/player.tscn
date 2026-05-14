@@ -71,6 +71,129 @@ shader_parameter/g = 0.0
 shader_parameter/b = 0.0
 shader_parameter/mix_color = 0.0
 
+[sub_resource type="Animation" id="Animation_854np"]
+resource_name = "Ataque_1"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_xdm6o"), ExtResource("19_vhrbh"), ExtResource("20_a3q0i"), ExtResource("21_4vb42"), ExtResource("22_utrqe"), ExtResource("23_v5uto"), ExtResource("24_i411i"), ExtResource("25_p8ekr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_mo0d6"]
+resource_name = "Ataque_2"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_xdm6o"), ExtResource("19_vhrbh"), ExtResource("20_a3q0i"), ExtResource("21_4vb42"), ExtResource("22_utrqe"), ExtResource("23_v5uto"), ExtResource("24_i411i"), ExtResource("25_p8ekr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_ya6pe"]
+resource_name = "Ataque_Especial"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("26_v5uto"), ExtResource("27_i411i"), ExtResource("28_p8ekr"), ExtResource("29_wp0f3"), ExtResource("30_03dfn"), ExtResource("31_llci7"), ExtResource("32_n7ytm"), ExtResource("33_36n3d")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_Especial:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xdm6o"]
+resource_name = "Bloqueo"
+
 [sub_resource type="Animation" id="Animation_vhrbh"]
 resource_name = "Dash_Air"
 length = 0.70001
@@ -97,46 +220,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-5, 7)]
-}
-
-[sub_resource type="Animation" id="Animation_ya6pe"]
-resource_name = "Dash_Attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("26_v5uto"), ExtResource("27_i411i"), ExtResource("28_p8ekr"), ExtResource("29_wp0f3"), ExtResource("30_03dfn"), ExtResource("31_llci7"), ExtResource("32_n7ytm"), ExtResource("33_36n3d")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Col_Daño/Ataque_2:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.46666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_r74tu"]
@@ -283,86 +366,6 @@ tracks/1/keys = {
 "values": [Vector2(-5, 5)]
 }
 
-[sub_resource type="Animation" id="Animation_854np"]
-resource_name = "Idle_Ataque_1"
-length = 0.53333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("18_xdm6o"), ExtResource("19_vhrbh"), ExtResource("20_a3q0i"), ExtResource("21_4vb42"), ExtResource("22_utrqe"), ExtResource("23_v5uto"), ExtResource("24_i411i"), ExtResource("25_p8ekr")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4, 5)]
-}
-
-[sub_resource type="Animation" id="Animation_mo0d6"]
-resource_name = "Idle_Ataque_2"
-length = 0.53333336
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("18_xdm6o"), ExtResource("19_vhrbh"), ExtResource("20_a3q0i"), ExtResource("21_4vb42"), ExtResource("22_utrqe"), ExtResource("23_v5uto"), ExtResource("24_i411i"), ExtResource("25_p8ekr")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(4, 5)]
-}
-
 [sub_resource type="Animation" id="Animation_j88y0"]
 resource_name = "Jump"
 length = 0.30001
@@ -421,7 +424,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Col_Daño/Ataque_2:disabled")
+tracks/2/path = NodePath("Col_Daño/Ataque_Especial:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -433,7 +436,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Col_Daño/Ataque_Slide:disabled")
+tracks/3/path = NodePath("Col_Daño/Ataque_2:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -514,15 +517,16 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hnmde"]
 _data = {
+&"Ataque_1": SubResource("Animation_854np"),
+&"Ataque_2": SubResource("Animation_mo0d6"),
+&"Ataque_Especial": SubResource("Animation_ya6pe"),
+&"Bloqueo": SubResource("Animation_xdm6o"),
 &"Dash_Air": SubResource("Animation_vhrbh"),
-&"Dash_Attack": SubResource("Animation_ya6pe"),
 &"Dash_Smoke_Ground": SubResource("Animation_r74tu"),
 &"Fall": SubResource("Animation_qfqbw"),
 &"Fase1_Agacharse": SubResource("Animation_di2o2"),
 &"Fase2_Agacharse": SubResource("Animation_mbhk2"),
 &"Idle": SubResource("Animation_eaib4"),
-&"Idle_Ataque_1": SubResource("Animation_854np"),
-&"Idle_Ataque_2": SubResource("Animation_mo0d6"),
 &"Jump": SubResource("Animation_j88y0"),
 &"RESET": SubResource("Animation_gkybl"),
 &"Run": SubResource("Animation_77wt8"),
@@ -548,14 +552,14 @@ shape = SubResource("RectangleShape2D_v6isy")
 disabled = true
 debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
 
-[node name="Ataque_Slide" type="CollisionShape2D" parent="Col_Daño" unique_id=1141034330]
-position = Vector2(9, 15)
+[node name="Ataque_2" type="CollisionShape2D" parent="Col_Daño" unique_id=1141034330]
+position = Vector2(20, -8)
 shape = SubResource("RectangleShape2D_71jhd")
 disabled = true
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
-[node name="Ataque_2" type="CollisionShape2D" parent="Col_Daño" unique_id=2132119326]
-position = Vector2(18, 2)
+[node name="Ataque_Especial" type="CollisionShape2D" parent="Col_Daño" unique_id=2132119326]
+position = Vector2(40, 1)
 shape = SubResource("RectangleShape2D_wrfa5")
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
