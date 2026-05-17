@@ -23,6 +23,7 @@ var estado = "Normal" # (Normal, Agachado, Dash, Atacando, Bloqueando)
 
 # ATAQUES
 var counter_hit : int = 0
+var ataque_actual : String = ""
 
 # Limitadores
 var Can_Dash : int = 1
@@ -38,12 +39,18 @@ func _ready():
 	$"Col_Daño/Ataque_Especial".disabled = true
 
 func _input(event): 
-	# Lógica de Ataque
+	# ATAQUE 1
 	if Input.is_action_just_pressed("Atacar"):
-		# Solo atacamos si no estamos bloqueando ni en dash
-		if is_on_floor() and estado != "Bloqueando": 
-			counter_hit += 1 
-			estado = "Atacando" 
+		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
+			estado = "Atacando"
+			ataque_actual = "Ataque_1"
+			_animaciones()
+
+	# ATAQUE 2 (TECLA G)
+	if Input.is_action_just_pressed("Ataque_2"):
+		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
+			estado = "Atacando"
+			ataque_actual = "Ataque_2"
 			_animaciones() 
 
 	# NUEVA LÓGICA DE BLOQUEO
@@ -155,7 +162,7 @@ func _animaciones():
 				ani.play("Dash_Air")
 		
 		"Atacando":
-			ani.play("Ataque_1", -1, 1.8)
+			ani.play(ataque_actual, -1, 1.8)
 			
 		"Bloqueando":
 			ani.play("Bloqueo") # <--- AQUÍ SE ACTIVA TU ANIMACIÓN
@@ -174,10 +181,11 @@ func _on_graficos_animation_finished(anim_name):
 			Can_Dash = 1
 		"Ataque_1":
 			if counter_hit > 1:
+				counter_hit = 0
 				ani.play("Ataque_1")
 				
 				
-				#ya vuelvo muchachos 
+				
 			else:
 				counter_hit = 0
 				estado = "Normal"

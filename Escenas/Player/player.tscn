@@ -126,7 +126,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("18_xdm6o"), ExtResource("19_vhrbh"), ExtResource("20_a3q0i"), ExtResource("21_4vb42"), ExtResource("22_utrqe"), ExtResource("23_v5uto"), ExtResource("24_i411i"), ExtResource("25_p8ekr")]
+"values": [ExtResource("26_v5uto"), ExtResource("27_i411i"), ExtResource("28_p8ekr"), ExtResource("29_wp0f3"), ExtResource("30_03dfn"), ExtResource("31_llci7"), ExtResource("32_n7ytm"), ExtResource("33_36n3d")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
