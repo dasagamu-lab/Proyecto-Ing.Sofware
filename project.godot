@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Fighters_Infinite"
-run/main_scene="uid://b6tya8mx83tya"
+run/main_scene="uid://c12oah21y0ihl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
