@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c12oah21y0ihl"]
+
+[ext_resource type="Script" uid="uid://2rneklfxl458" path="res://animacion_entrada.gd" id="1_5xvfa"]
+[ext_resource type="Texture2D" uid="uid://hadfo531hrbv" path="res://Assets/Pantalla_inicio/logito-losdelgas.png" id="2_1vclv"]
+
+[sub_resource type="Animation" id="Animation_jo6v3"]
+resource_name = "Caiendo"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(204, -32), Vector2(204, 117), Vector2(204, 100), Vector2(204, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.233333, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nybyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(204, -32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4jdg"]
+_data = {
+&"Caiendo": SubResource("Animation_jo6v3"),
+&"RESET": SubResource("Animation_nybyi")
+}
+
+[node name="Animacion_entrada" type="Node2D" unique_id=258658075]
+script = ExtResource("1_5xvfa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1282765719]
+position = Vector2(204, -32)
+texture = ExtResource("2_1vclv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=814192023]
+libraries/ = SubResource("AnimationLibrary_y4jdg")
+autoplay = &"Caiendo"
+speed_scale = 2.0
+
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

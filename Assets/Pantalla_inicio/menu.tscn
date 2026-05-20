@@ -55,16 +55,19 @@ offset_bottom = 66.52
 theme_override_constants/separation = 12
 
 [node name="Jugar" type="Button" parent="VBoxContainer" unique_id=1464578125]
+texture_filter = 1
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_pqr4i")
 text = "JUGAR"
 
 [node name="Opcioines" type="Button" parent="VBoxContainer" unique_id=1291966309]
+texture_filter = 1
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_u84pd")
 text = "OPCIONES"
 
 [node name="Salir" type="Button" parent="VBoxContainer" unique_id=1774681369]
+texture_filter = 1
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_hc0ip")
 text = "SALIR"
