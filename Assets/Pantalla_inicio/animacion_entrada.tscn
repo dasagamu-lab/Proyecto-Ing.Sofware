@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c12oah21y0ihl"]
+[gd_scene format=3 uid="uid://dw4d1cvjcey28"]
 
-[ext_resource type="Script" uid="uid://2rneklfxl458" path="res://animacion_entrada.gd" id="1_5xvfa"]
+[ext_resource type="Script" path="res://animacion_entrada.gd" id="1_5xvfa"]
 [ext_resource type="Texture2D" uid="uid://hadfo531hrbv" path="res://Assets/Pantalla_inicio/logito-losdelgas.png" id="2_1vclv"]
 
 [sub_resource type="Animation" id="Animation_jo6v3"]
