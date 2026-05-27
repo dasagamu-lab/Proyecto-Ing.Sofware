@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dl78eu0l5uwg"]
+
+[ext_resource type="Script" uid="uid://cthwv6x0p5623" path="res://Assets/Escenas/Player/especial.gd" id="1_f0o0g"]
+[ext_resource type="Texture2D" uid="uid://b8yjy4yhqihv5" path="res://Assets/Personajes/Lum/Especial/Especial.png" id="2_a0jbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7boi"]
+size = Vector2(20, 68)
+
+[node name="Especial" type="Area2D" unique_id=904899015 groups=["P_Punch"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_f0o0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1512545568]
+position = Vector2(48, 6)
+shape = SubResource("RectangleShape2D_p7boi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1705155447]
+position = Vector2(55, 0)
+texture = ExtResource("2_a0jbp")
