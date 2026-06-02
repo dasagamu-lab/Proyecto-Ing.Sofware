@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhwcqlhtcmtgg" path="res://Assets/Tiles/Trees.png" id="3_7smce"]
 [ext_resource type="Texture2D" uid="uid://byje2iqr2gr0b" path="res://Assets/Backgrounds/Grass Mountains.png" id="3_d6t48"]
 [ext_resource type="PackedScene" uid="uid://byems0y0avw02" path="res://Assets/Escenas/Dummy/dummy.tscn" id="3_opkb5"]
+[ext_resource type="PackedScene" uid="uid://4psgqxndekeh" path="res://Assets/Escenas/Player/player2.tscn" id="11_i51fa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic3r3"]
 texture = ExtResource("1_j71il")
@@ -514,3 +515,6 @@ limit_top = 0
 
 [node name="Player" parent="." unique_id=1369458663 instance=ExtResource("2_sl7lf")]
 position = Vector2(180, 176)
+
+[node name="Player2" parent="." unique_id=1972453486 instance=ExtResource("11_i51fa")]
+position = Vector2(278, 169)

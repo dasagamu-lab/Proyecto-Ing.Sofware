@@ -1,11 +1,10 @@
 extends CharacterBody2D
-class_name player
+class_name player2
 
 # VELOCIDADES
 var intVX : int = 10000
 var intVY : int = 480
 var intVX_Dash : int = 18000
-var Especial = preload("res://Assets/Escenas/player/especial.tscn")
 
 # FISICAS
 var Jump_Height : int = 240
@@ -275,23 +274,6 @@ func _on_graficos_animation_finished(anim_name):
 		"Especial":
 
 			estado = "Normal"
-
-
-func crear_especial():
-
-	var proyectil = Especial.instantiate()
-
-	proyectil.global_position = global_position
-
-	if mirror.flip_h:
-
-		proyectil.direction = -1
-
-	else:
-
-		proyectil.direction = 1
-
-	get_parent().add_child(proyectil)
 
 
 func crear_duplicado():

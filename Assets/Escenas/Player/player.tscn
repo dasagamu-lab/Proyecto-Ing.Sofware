@@ -14,15 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://duldj6vpkfj1f" path="res://Assets/Personajes/Lum/Bloqueo/Block_1.png" id="20_xdm6o"]
 [ext_resource type="Texture2D" uid="uid://cdvvyac5uu6cu" path="res://Assets/Personajes/Lum/Atack1/Atack1_4.png" id="21_4vb42"]
 [ext_resource type="Texture2D" uid="uid://c3v4lkmsw6a41" path="res://Assets/Personajes/Lum/Especial/Especial2.png" id="21_llci7"]
+[ext_resource type="Texture2D" uid="uid://bhc5o32s6ux5b" path="res://Assets/Personajes/Lum/Caida/Damage2.png" id="21_sx5k5"]
+[ext_resource type="Texture2D" uid="uid://daurc1aoj0a6v" path="res://Assets/Personajes/Lum/Caida/Damage3.png" id="22_1npv1"]
 [ext_resource type="Texture2D" uid="uid://cu7t0k2rynjb7" path="res://Assets/Personajes/Lum/Especial/Especial3.png" id="22_n7ytm"]
 [ext_resource type="Texture2D" uid="uid://b60wf8k27b7y4" path="res://Assets/Personajes/Lum/Atack1/Atack1_5.png" id="22_utrqe"]
 [ext_resource type="Texture2D" uid="uid://l2uiqxkfx52h" path="res://Assets/Personajes/Lum/Especial/Especial4.png" id="23_36n3d"]
 [ext_resource type="Texture2D" uid="uid://sobcx4y4hqls" path="res://Assets/Personajes/Lum/Atack1/Atack1_6.png" id="23_v5uto"]
+[ext_resource type="Texture2D" uid="uid://df24a2m2jmk30" path="res://Assets/Personajes/Lum/Caida/Damage4.png" id="23_v72ee"]
 [ext_resource type="Texture2D" uid="uid://bmvl1o57vs70t" path="res://Assets/Personajes/Lum/Atack1/Atack1_7.png" id="24_i411i"]
 [ext_resource type="Texture2D" uid="uid://d3ii4eejw332r" path="res://Assets/Personajes/Lum/Especial/Especial5.png" id="24_ly5iy"]
+[ext_resource type="Texture2D" uid="uid://bemgfe4evr6kc" path="res://Assets/Personajes/Lum/Caida/Damage6.png" id="24_s7qt0"]
+[ext_resource type="Texture2D" uid="uid://dmx5pvcradwuv" path="res://Assets/Personajes/Lum/Caida/Damage8.png" id="25_4dix8"]
 [ext_resource type="Texture2D" uid="uid://cnipdbn2efat7" path="res://Assets/Personajes/Lum/Especial/Especial6.png" id="25_a4yyp"]
 [ext_resource type="Texture2D" uid="uid://jguuu70xd71a" path="res://Assets/Personajes/Lum/Atack1/Atack1_8.png" id="25_p8ekr"]
 [ext_resource type="Texture2D" uid="uid://bl5f10ohhkk88" path="res://Assets/Personajes/Lum/Especial/Especial7.png" id="26_ivph4"]
+[ext_resource type="Texture2D" uid="uid://q6yv6vdnjfnh" path="res://Assets/Personajes/Lum/Caida/Damage9.png" id="26_kn07g"]
 [ext_resource type="Texture2D" uid="uid://2sambo2qgqgj" path="res://Assets/Personajes/Lum/Atack2/Atack2_1.png" id="26_v5uto"]
 [ext_resource type="Texture2D" uid="uid://b6cob3vryiyo1" path="res://Assets/Personajes/Lum/Atack2/Atack2_2.png" id="27_i411i"]
 [ext_resource type="Texture2D" uid="uid://b6j2fwyvbl2gl" path="res://Assets/Personajes/Lum/Especial/Especial8.png" id="27_qaed6"]
@@ -182,6 +188,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-4, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_78a07"]
+resource_name = "Caida"
+length = 1.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333342, 0.2000001, 0.4000001, 0.6000001, 0.76666677, 0.9333334, 1.0666667, 1.2, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_sx5k5"), ExtResource("22_1npv1"), ExtResource("23_v72ee"), ExtResource("24_s7qt0"), ExtResource("24_s7qt0"), ExtResource("24_s7qt0"), ExtResource("25_4dix8"), ExtResource("25_4dix8"), ExtResource("26_kn07g")]
 }
 
 [sub_resource type="Animation" id="Animation_vhrbh"]
@@ -539,6 +561,7 @@ _data = {
 &"Ataque_1": SubResource("Animation_854np"),
 &"Ataque_2": SubResource("Animation_mo0d6"),
 &"Bloqueo": SubResource("Animation_xdm6o"),
+&"Caida": SubResource("Animation_78a07"),
 &"Dash_Air": SubResource("Animation_vhrbh"),
 &"Dash_Smoke_Ground": SubResource("Animation_r74tu"),
 &"Especial": SubResource("Animation_ya6pe"),
