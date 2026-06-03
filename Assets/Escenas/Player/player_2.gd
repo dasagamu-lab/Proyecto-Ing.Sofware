@@ -51,7 +51,7 @@ func _input(event):
 			_animaciones()
 
 	# ATAQUE 2 (TECLA G)
-	if Input.is_action_just_pressed("Ataque_2"):
+	if Input.is_action_just_pressed("Ataque_2_2"):
 
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 
