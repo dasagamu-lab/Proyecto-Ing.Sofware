@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://s243f3p8oy2p"]
+
+[ext_resource type="Script" uid="uid://ctr14yhncgb88" path="res://selector_personaje.gd" id="1_avt16"]
+[ext_resource type="Script" uid="uid://dh64c7tkiyknd" path="res://character_data.gd" id="2_8yde0"]
+[ext_resource type="Texture2D" uid="uid://d01okydmpf616" path="res://Assets/Gráficos/Lum/Atack1/Atack1_1.png" id="2_gtb7y"]
+[ext_resource type="Texture2D" uid="uid://bcmsc2tjulw75" path="res://Assets/Gráficos/Sierv/Sierv idle.png" id="4_uxsw2"]
+
+[sub_resource type="Resource" id="Resource_7q6a0"]
+script = ExtResource("2_8yde0")
+Key = "Lum"
+Imagen = ExtResource("2_gtb7y")
+metadata/_custom_type_script = "uid://dh64c7tkiyknd"
+
+[sub_resource type="Resource" id="Resource_8o52u"]
+script = ExtResource("2_8yde0")
+Key = "Sierv"
+Imagen = ExtResource("4_uxsw2")
+metadata/_custom_type_script = "uid://dh64c7tkiyknd"
+
+[node name="Control" type="Control" unique_id=616910573]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_avt16")
+Personajes = Array[ExtResource("2_8yde0")]([SubResource("Resource_7q6a0"), SubResource("Resource_8o52u")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1953138382]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29411766, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1891690524]
+position = Vector2(222.99998, 107)
+scale = Vector2(3.140625, 3.225)
+texture = ExtResource("2_gtb7y")
+
+[node name="Siguiente" type="Button" parent="." unique_id=1086698865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.4
+anchor_right = 0.324
+anchor_bottom = 0.52500004
+offset_left = 179.868
+offset_top = 5.0
+offset_right = 182.976
+offset_bottom = 5.9999924
+grow_horizontal = 2
+text = ">"
+
+[node name="Anterior" type="Button" parent="." unique_id=137871218]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.4
+anchor_right = 0.324
+anchor_bottom = 0.52500004
+offset_left = -3.1320038
+offset_top = 5.0
+offset_right = -0.024002075
+grow_horizontal = 2
+text = "<"
+
+[node name="Seleccionar" type="Button" parent="." unique_id=1135748141]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.4
+anchor_right = 0.324
+anchor_bottom = 0.52500004
+offset_left = 48.867996
+offset_top = 69.0
+offset_right = 129.976
+offset_bottom = 63.999992
+grow_horizontal = 2
+text = "SELECCIONAR"
+
+[connection signal="pressed" from="Siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="pressed" from="Anterior" to="." method="_on_anterior_pressed"]
+[connection signal="pressed" from="Seleccionar" to="." method="_on_seleccionar_pressed"]
