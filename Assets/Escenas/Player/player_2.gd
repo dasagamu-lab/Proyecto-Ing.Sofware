@@ -42,7 +42,7 @@ func _ready():
 func _input(event):
 
 	# ATAQUE 1
-	if Input.is_action_just_pressed("Atacar"):
+	if Input.is_action_just_pressed("Atacar_2"):
 
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 
@@ -95,11 +95,11 @@ func _physics_process(delta):
 	# Movimiento
 	if estado != "Bloqueando" and estado != "Atacando" and estado != "Especial":
 
-		if Input.is_action_pressed("Derecha"):
+		if Input.is_action_pressed("Derecha_2"):
 
 			intMove = 1
 
-		elif Input.is_action_pressed("Izquierda"):
+		elif Input.is_action_pressed("Izquierda_2"):
 
 			intMove = -1
 
@@ -112,10 +112,10 @@ func _physics_process(delta):
 		intMove = 0
 
 	# Dash
-	if Input.is_action_just_pressed("Dash") and Can_Dash > 0 and estado != "Bloqueando":
+	if Input.is_action_just_pressed("Dash_2") and Can_Dash > 0 and estado != "Bloqueando":
 
 		estado = "Dash"
-		Can_Dash -= 1
+		Can_Dash -= 5
 
 	# MAQUINA DE ESTADOS
 	match estado:

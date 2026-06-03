@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://215dqcpnayaw" path="res://Assets/Personajes/Lum/Atack2/Atack2_6.png" id="17_lv8af"]
 [ext_resource type="Texture2D" uid="uid://cjr8ljvnvb2yu" path="res://Assets/Personajes/Lum/Atack2/Atack2_7.png" id="18_l6wf0"]
 [ext_resource type="Texture2D" uid="uid://b2jqfhq651e1x" path="res://Assets/Personajes/Lum/Atack2/Atack2_8.png" id="19_0ohb3"]
+[ext_resource type="Texture2D" uid="uid://cgpcyg0np1bm3" path="res://Assets/Personajes/Sierv/dash.png" id="19_ns85k"]
 [ext_resource type="Texture2D" uid="uid://duldj6vpkfj1f" path="res://Assets/Personajes/Lum/Bloqueo/Block_1.png" id="20_q840m"]
 [ext_resource type="Texture2D" uid="uid://d3rt16k0q7y8y" path="res://Assets/Personajes/Lum/Run/Sprites correr2.png" id="21_sobx7"]
 [ext_resource type="Texture2D" uid="uid://1qssp8cyaqy7" path="res://Assets/Personajes/Lum/Especial/Especial1.png" id="22_2avfo"]
@@ -36,22 +37,12 @@
 [ext_resource type="Texture2D" uid="uid://daeyjyhc1dofc" path="res://Assets/Personajes/Sierv/Idle/Idle_2.png" id="34_ns85k"]
 [ext_resource type="Texture2D" uid="uid://bhdgyt525tti" path="res://Assets/Personajes/Sierv/Idle/Idle_3.png" id="35_dm1nh"]
 [ext_resource type="Texture2D" uid="uid://qog0me2g8nw5" path="res://Assets/Personajes/Sierv/Idle/Idle_4.png" id="36_16cma"]
-[ext_resource type="Texture2D" uid="uid://ckcmf0lpfjj10" path="res://Assets/Personajes/Lum/Run/Sprites correr1.png" id="44_cc4rq"]
-[ext_resource type="Texture2D" uid="uid://bqdvtm5fiowng" path="res://Assets/Personajes/Lum/Run/Sprites correr3.png" id="45_ltjlw"]
-[ext_resource type="Texture2D" uid="uid://oygnypw8agb4" path="res://Assets/Personajes/Lum/Run/Sprites correr4.png" id="46_vud6b"]
-[ext_resource type="Texture2D" uid="uid://tcnyuqx65cct" path="res://Assets/Personajes/Lum/Run/Sprites correr5.png" id="47_blrj7"]
-[ext_resource type="Texture2D" uid="uid://daeopmckv4kth" path="res://Assets/Personajes/Lum/Run/Sprites correr6.png" id="48_583a2"]
-[ext_resource type="Texture2D" uid="uid://cm635ytl6108v" path="res://Assets/Personajes/Lum/Run/Sprites correr7.png" id="49_lsuu5"]
-[ext_resource type="Texture2D" uid="uid://c2ggucelot6g8" path="res://Assets/Personajes/Lum/Run/Sprites correr8.png" id="50_50s0h"]
-[ext_resource type="Texture2D" uid="uid://dmq4js5b0lty1" path="res://Assets/Personajes/Lum/Run/Sprites correr9.png" id="51_hjmty"]
-[ext_resource type="Texture2D" uid="uid://b5nkpkh3tlc80" path="res://Assets/Personajes/Warrior/Individual Sprite/Run/Warrior_Run_5.png" id="52_uxxrb"]
-[ext_resource type="Texture2D" uid="uid://dl4xupsw6trte" path="res://Assets/Personajes/Lum/Run/Sprites correr10.png" id="53_7w3ad"]
-[ext_resource type="Texture2D" uid="uid://1q1b2xnhfae8" path="res://Assets/Personajes/Lum/Run/Sprites correr11.png" id="54_finsi"]
-[ext_resource type="Texture2D" uid="uid://gg3w8800d3pi" path="res://Assets/Personajes/Lum/Run/Sprites correr12.png" id="55_jfnwu"]
-[ext_resource type="Texture2D" uid="uid://b3a6pylm6n3y4" path="res://Assets/Personajes/Lum/Run/Sprites correr13.png" id="56_yxvb8"]
-[ext_resource type="Texture2D" uid="uid://bc2htul3hx5w0" path="res://Assets/Personajes/Lum/Run/Sprites correr14.png" id="57_x7hvo"]
-[ext_resource type="Texture2D" uid="uid://coo1kis14paxn" path="res://Assets/Personajes/Lum/Run/Sprites correr15.png" id="58_t0kus"]
-[ext_resource type="Texture2D" uid="uid://cb0ieg3btl4jd" path="res://Assets/Personajes/Lum/Run/Sprites correr16.png" id="59_by36v"]
+[ext_resource type="Texture2D" uid="uid://dv77wjv1wny66" path="res://Assets/Personajes/Sierv/Walk1.png" id="37_0mb30"]
+[ext_resource type="Texture2D" uid="uid://bmbax4uoe5wcl" path="res://Assets/Personajes/Sierv/Walk2.png" id="38_ptcjo"]
+[ext_resource type="Texture2D" uid="uid://bncv1ky2r2og3" path="res://Assets/Personajes/Sierv/Walk3.png" id="39_u1ifk"]
+[ext_resource type="Texture2D" uid="uid://chtm7etn6i8j4" path="res://Assets/Personajes/Sierv/Walk4.png" id="40_bh33a"]
+[ext_resource type="Texture2D" uid="uid://ijxyj0loat0u" path="res://Assets/Personajes/Sierv/Walk5.png" id="41_5tq7b"]
+[ext_resource type="Texture2D" uid="uid://pfjxcn0chx63" path="res://Assets/Personajes/Sierv/Walk6.png" id="42_u6ry6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi86t"]
 size = Vector2(19, 29.5)
@@ -206,7 +197,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("21_sobx7")]
+"values": [ExtResource("19_ns85k")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -234,7 +225,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("21_sobx7")]
+"values": [ExtResource("19_ns85k")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -488,7 +479,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_77wt8"]
 resource_name = "Run"
-length = 0.53333336
+length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -497,10 +488,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(7.450581e-09, 0.033333346, 0.06666668, 0.10000001, 0.13333334, 0.16666669, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.3001, 0.33333334, 0.36666667, 0.4, 0.43333337, 0.46666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(7.450581e-09, 0.033333346, 0.06666668, 0.10000001, 0.13333334, 0.16666669),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("44_cc4rq"), ExtResource("21_sobx7"), ExtResource("45_ltjlw"), ExtResource("46_vud6b"), ExtResource("47_blrj7"), ExtResource("48_583a2"), ExtResource("49_lsuu5"), ExtResource("50_50s0h"), ExtResource("51_hjmty"), ExtResource("52_uxxrb"), ExtResource("53_7w3ad"), ExtResource("54_finsi"), ExtResource("55_jfnwu"), ExtResource("56_yxvb8"), ExtResource("57_x7hvo"), ExtResource("58_t0kus"), ExtResource("59_by36v")]
+"values": [ExtResource("37_0mb30"), ExtResource("38_ptcjo"), ExtResource("39_u1ifk"), ExtResource("40_bh33a"), ExtResource("41_5tq7b"), ExtResource("42_u6ry6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
