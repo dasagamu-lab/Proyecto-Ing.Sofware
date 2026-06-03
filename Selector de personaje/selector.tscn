@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://s243f3p8oy2p"]
 
-[ext_resource type="Script" uid="uid://ctr14yhncgb88" path="res://selector_personaje.gd" id="1_avt16"]
-[ext_resource type="Script" uid="uid://dh64c7tkiyknd" path="res://character_data.gd" id="2_8yde0"]
-[ext_resource type="Texture2D" uid="uid://d01okydmpf616" path="res://Assets/Gráficos/Lum/Atack1/Atack1_1.png" id="2_gtb7y"]
-[ext_resource type="Texture2D" uid="uid://bcmsc2tjulw75" path="res://Assets/Gráficos/Sierv/Sierv idle.png" id="4_uxsw2"]
+[ext_resource type="Script" uid="uid://ctr14yhncgb88" path="res://Selector de personaje/selector_personaje.gd" id="1_avt16"]
+[ext_resource type="Script" path="res://character_data.gd" id="2_8yde0"]
+[ext_resource type="Texture2D" uid="uid://d01okydmpf616" path="res://Assets/Personajes/Lum/Atack1/Atack1_1.png" id="2_gtb7y"]
+[ext_resource type="Texture2D" uid="uid://bip06vo03p3ry" path="res://Assets/Personajes/Sierv/Idle/Idle_1.png" id="4_uxsw2"]
 
 [sub_resource type="Resource" id="Resource_7q6a0"]
 script = ExtResource("2_8yde0")
