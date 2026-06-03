@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://b6tya8mx83tya"]
 
 [ext_resource type="Script" uid="uid://dnoovjxco5dld" path="res://Assets/Pantalla_inicio/menu.gd" id="1_b4x07"]
-[ext_resource type="Texture2D" uid="uid://dqnorf5ryaov7" path="res://Assets/Pantalla_inicio/Clouds.png" id="2_yn6j3"]
+[ext_resource type="VideoStream" uid="uid://rpx1cpggb50f" path="res://Assets/Pantalla_inicio/video-redimensionado.ogv" id="2_8g2fu"]
+[ext_resource type="Texture2D" uid="uid://cq4ynhae3lvk8" path="res://Assets/Pantalla_inicio/Logo_Infinite_Fighters.png" id="3_yn6j3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqr4i"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,25 +22,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b4x07")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=632629635]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1188559849]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.51428187, 0.7419298, 0.8860391, 1)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1058248064]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -38.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_yn6j3")
-expand_mode = 1
+stream = ExtResource("2_8g2fu")
+autoplay = true
+expand = true
+loop = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1953120896]
 layout_mode = 1
@@ -49,9 +42,9 @@ anchor_top = 0.527
 anchor_right = 0.50200003
 anchor_bottom = 0.527
 offset_left = -54.85202
-offset_top = -26.480003
+offset_top = -9.480003
 offset_right = 55.14798
-offset_bottom = 66.52
+offset_bottom = 83.52
 theme_override_constants/separation = 12
 
 [node name="Jugar" type="Button" parent="VBoxContainer" unique_id=1464578125]
@@ -71,6 +64,11 @@ texture_filter = 1
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_hc0ip")
 text = "SALIR"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=290882405]
+position = Vector2(213, 51.999996)
+scale = Vector2(0.6682243, 0.5555555)
+texture = ExtResource("3_yn6j3")
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
