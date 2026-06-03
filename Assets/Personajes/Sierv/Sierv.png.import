@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3hut5k34xt4w"
-path="res://.godot/imported/Damage.png-7b313531665f38b372124d7f67271b15.ctex"
+uid="uid://b5wrguqcavovb"
+path="res://.godot/imported/Sierv.png-b42ada0e315435b61d8471d4a42e4853.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Damage.png"
-dest_files=["res://.godot/imported/Damage.png-7b313531665f38b372124d7f67271b15.ctex"]
+source_file="res://Assets/Personajes/Sierv/Sierv.png"
+dest_files=["res://.godot/imported/Sierv.png-b42ada0e315435b61d8471d4a42e4853.ctex"]
 
 [params]
 

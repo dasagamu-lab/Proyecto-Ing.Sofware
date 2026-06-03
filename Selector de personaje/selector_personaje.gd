@@ -1,28 +1,37 @@
 extends Control
 
-@export var Personajes: Array[characterdata]
-
 @onready var spr = $Sprite2D
 
-var cont: int =0
+var personajes = [
+	preload("res://Assets/Personajes/Lum/Lum.png"),
 
-func sig() -> void:
-	if cont < Personajes.size() -1:
-		cont +=1
-		spr.texture = Personajes[cont].Imagen
-func ant() -> void:
-	if cont >= 0:
-		cont -=1
-		spr.texture = Personajes[cont].Imagen
+	preload("res://Assets/Personajes/Sierv/Sierv.png")
+]
 
+var cont := 0
 
-func _on_siguiente_pressed() -> void:
-	sig()
+func _ready():
+	spr.texture = personajes[0]
+	
+func sig():
 
+	if cont < personajes.size() - 1:
 
-func _on_anterior_pressed() -> void:
-	ant()
+		cont += 1
 
+		spr.texture = personajes[cont]
 
-func _on_seleccionar_pressed() -> void:
-	pass # Replace with function body.
+func ant():
+
+	if cont > 0:
+
+		cont -= 1
+
+		spr.texture = personajes[cont]
+		
+		
+func _on_seleccionar_pressed():
+
+	Global.personaje_seleccionado = cont
+
+	get_tree().change_scene_to_file("res://Assets/Escenas/level.tscn")

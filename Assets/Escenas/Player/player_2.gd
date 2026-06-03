@@ -229,9 +229,6 @@ func _animaciones():
 
 			ani.play("Bloqueo")
 
-		"Especial":
-
-			ani.play("Especial")
 
 	# Seguridad hitboxes
 	if estado != "Atacando":
