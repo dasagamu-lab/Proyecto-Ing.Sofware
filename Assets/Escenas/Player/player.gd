@@ -190,17 +190,7 @@ func _animaciones():
 		$"Col_Daño/Ataque_2".disabled = true
 
 
-func _on_area_entered(area):
-	if area.is_in_group("P_Punch"):
-		vida -= 10
-		print("Vida restante: ", vida)
 
-		if vida <= 0:
-			vida = 0
-			estado = "Muerto"
-			ani.play("Caida")
-		else:
-			_ani_change()
 
 
 func _on_graficos_animation_finished(anim_name):
@@ -266,3 +256,37 @@ func _ani_change():
 		ani.play("Idle")
 
 	ani.play("Hit")
+
+
+
+
+ # Replace with function body.
+
+
+func _on_hurbox_area_entered(area: Area2D):
+		
+	print("ENTRO AL AREA")
+
+	print(area.name)
+
+	print(area.get_groups())
+
+	if area.is_in_group("P_Punch"):
+
+		print("DAÑO REGISTRADO")
+
+		vida -= 10
+
+		print("Vida:", vida)
+
+		if vida <= 0:
+
+			vida = 0
+
+			estado = "Muerto"
+
+			ani.play("Caida")
+
+		else:
+
+			_ani_change()
