@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxfyrpm6doass"
-path="res://.godot/imported/Walk1.png-06a627b44aff0ce6b04947e8fefbbbc5.ctex"
+uid="uid://bmbax4uoe5wcl"
+path="res://.godot/imported/Walk2.png-a504207a09f4c5d8c3d9b2584c3abb0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Sierv/Walk1.png"
-dest_files=["res://.godot/imported/Walk1.png-06a627b44aff0ce6b04947e8fefbbbc5.ctex"]
+source_file="res://Assets/Personajes/Sierv/Correr/Walk2.png"
+dest_files=["res://.godot/imported/Walk2.png-a504207a09f4c5d8c3d9b2584c3abb0a.ctex"]
 
 [params]
 

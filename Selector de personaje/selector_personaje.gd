@@ -10,6 +10,7 @@ var personajes = [
 
 var cont := 0
 
+
 func _ready():
 	spr.texture = personajes[0]
 	

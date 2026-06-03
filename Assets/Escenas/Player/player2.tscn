@@ -9,14 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://c6er8ocqtub82" path="res://Assets/Personajes/Sierv/Ataque 1/Damage4.png" id="7_7q4ku"]
 [ext_resource type="Texture2D" uid="uid://b3lslfqug18w1" path="res://Assets/Personajes/Sierv/Ataque 1/Damage5.png" id="8_5xjta"]
 [ext_resource type="Texture2D" uid="uid://0fedmbo64cce" path="res://Assets/Personajes/Sierv/Ataque 1/Damage6.png" id="9_l1fjy"]
-[ext_resource type="Texture2D" uid="uid://2sambo2qgqgj" path="res://Assets/Personajes/Lum/Atack2/Atack2_1.png" id="12_gu303"]
-[ext_resource type="Texture2D" uid="uid://b6cob3vryiyo1" path="res://Assets/Personajes/Lum/Atack2/Atack2_2.png" id="13_euy6i"]
-[ext_resource type="Texture2D" uid="uid://xvkynira16q7" path="res://Assets/Personajes/Lum/Atack2/Atack2_3.png" id="14_ydqjx"]
-[ext_resource type="Texture2D" uid="uid://csdqhnamyom8c" path="res://Assets/Personajes/Lum/Atack2/Atack2_4.png" id="15_g2bva"]
-[ext_resource type="Texture2D" uid="uid://tctyj7vk2mei" path="res://Assets/Personajes/Lum/Atack2/Atack2_5.png" id="16_gxvt0"]
-[ext_resource type="Texture2D" uid="uid://215dqcpnayaw" path="res://Assets/Personajes/Lum/Atack2/Atack2_6.png" id="17_lv8af"]
-[ext_resource type="Texture2D" uid="uid://cjr8ljvnvb2yu" path="res://Assets/Personajes/Lum/Atack2/Atack2_7.png" id="18_l6wf0"]
-[ext_resource type="Texture2D" uid="uid://b2jqfhq651e1x" path="res://Assets/Personajes/Lum/Atack2/Atack2_8.png" id="19_0ohb3"]
+[ext_resource type="Texture2D" uid="uid://cmf24kmdnljs3" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv1.png" id="10_0mb30"]
+[ext_resource type="Texture2D" uid="uid://uijmq03cfv54" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv2.png" id="11_ptcjo"]
+[ext_resource type="Texture2D" uid="uid://btofwxdcmuu7b" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv3.png" id="12_u1ifk"]
+[ext_resource type="Texture2D" uid="uid://n4x0xnpyd1kw" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv4.png" id="13_bh33a"]
+[ext_resource type="Texture2D" uid="uid://dt8qn44rkdx5i" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv5.png" id="14_5tq7b"]
+[ext_resource type="Texture2D" uid="uid://bpbw1n1mctq5p" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv6.png" id="15_u6ry6"]
+[ext_resource type="Texture2D" uid="uid://cbsb3mj3rh6t3" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv7.png" id="16_s1la1"]
+[ext_resource type="Texture2D" uid="uid://ch603bb6ff50l" path="res://Assets/Personajes/Sierv/Ataque 2/Sierv8.png" id="17_2i07o"]
 [ext_resource type="Texture2D" uid="uid://cgpcyg0np1bm3" path="res://Assets/Personajes/Sierv/dash.png" id="19_ns85k"]
 [ext_resource type="Texture2D" uid="uid://duldj6vpkfj1f" path="res://Assets/Personajes/Lum/Bloqueo/Block_1.png" id="20_q840m"]
 [ext_resource type="Texture2D" uid="uid://d3rt16k0q7y8y" path="res://Assets/Personajes/Lum/Run/Sprites correr2.png" id="21_sobx7"]
@@ -37,12 +37,12 @@
 [ext_resource type="Texture2D" uid="uid://daeyjyhc1dofc" path="res://Assets/Personajes/Sierv/Idle/Idle_2.png" id="34_ns85k"]
 [ext_resource type="Texture2D" uid="uid://bhdgyt525tti" path="res://Assets/Personajes/Sierv/Idle/Idle_3.png" id="35_dm1nh"]
 [ext_resource type="Texture2D" uid="uid://qog0me2g8nw5" path="res://Assets/Personajes/Sierv/Idle/Idle_4.png" id="36_16cma"]
-[ext_resource type="Texture2D" uid="uid://dv77wjv1wny66" path="res://Assets/Personajes/Sierv/Walk1.png" id="37_0mb30"]
-[ext_resource type="Texture2D" uid="uid://bmbax4uoe5wcl" path="res://Assets/Personajes/Sierv/Walk2.png" id="38_ptcjo"]
-[ext_resource type="Texture2D" uid="uid://bncv1ky2r2og3" path="res://Assets/Personajes/Sierv/Walk3.png" id="39_u1ifk"]
-[ext_resource type="Texture2D" uid="uid://chtm7etn6i8j4" path="res://Assets/Personajes/Sierv/Walk4.png" id="40_bh33a"]
-[ext_resource type="Texture2D" uid="uid://ijxyj0loat0u" path="res://Assets/Personajes/Sierv/Walk5.png" id="41_5tq7b"]
-[ext_resource type="Texture2D" uid="uid://pfjxcn0chx63" path="res://Assets/Personajes/Sierv/Walk6.png" id="42_u6ry6"]
+[ext_resource type="Texture2D" uid="uid://cxfyrpm6doass" path="res://Assets/Personajes/Sierv/Walk1.png" id="37_0mb30"]
+[ext_resource type="Texture2D" uid="uid://b5ybtp37ait8i" path="res://Assets/Personajes/Sierv/Walk2.png" id="38_ptcjo"]
+[ext_resource type="Texture2D" uid="uid://4ktjpdbw5e6n" path="res://Assets/Personajes/Sierv/Walk3.png" id="39_u1ifk"]
+[ext_resource type="Texture2D" uid="uid://d1w66hrkdipbf" path="res://Assets/Personajes/Sierv/Walk4.png" id="40_bh33a"]
+[ext_resource type="Texture2D" uid="uid://tr2fbbj2diph" path="res://Assets/Personajes/Sierv/Walk5.png" id="41_5tq7b"]
+[ext_resource type="Texture2D" uid="uid://cvpl87pgk0825" path="res://Assets/Personajes/Sierv/Walk6.png" id="42_u6ry6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi86t"]
 size = Vector2(19, 29.5)
@@ -111,10 +111,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.40000004, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("12_gu303"), ExtResource("13_euy6i"), ExtResource("14_ydqjx"), ExtResource("15_g2bva"), ExtResource("16_gxvt0"), ExtResource("17_lv8af"), ExtResource("18_l6wf0"), ExtResource("19_0ohb3")]
+"values": [ExtResource("10_0mb30"), ExtResource("11_ptcjo"), ExtResource("12_u1ifk"), ExtResource("13_bh33a"), ExtResource("14_5tq7b"), ExtResource("15_u6ry6"), ExtResource("16_s1la1"), ExtResource("17_2i07o")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -123,10 +123,10 @@ tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333334, 0.34886798, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, false, false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -138,7 +138,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(11, 5.9604645e-08)]
+"values": [Vector2(5, -7.999998)]
 }
 
 [sub_resource type="Animation" id="Animation_xdm6o"]
@@ -584,7 +584,7 @@ z_index = 10
 texture_filter = 1
 material = SubResource("ShaderMaterial_af4s8")
 position = Vector2(-5, 5)
-scale = Vector2(0.9358086, 0.975)
+scale = Vector2(0.859424, 0.9260416)
 texture = ExtResource("3_5xjta")
 
 [node name="Graficos" type="AnimationPlayer" parent="Sprite2D" unique_id=1079424632]
