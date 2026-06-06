@@ -1,0 +1,825 @@
+[gd_scene format=3 uid="uid://xj2kv1mm05vc"]
+
+[ext_resource type="Script" uid="uid://dvovg71xrda2o" path="res://Assets/Codigos/Lum/player.gd" id="1_857ei"]
+[ext_resource type="Shader" uid="uid://uwufmu600710" path="res://Assets/Escenas/Lum/Alucard.gdshader" id="2_e7wdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi86t"]
+size = Vector2(19, 29.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6isy"]
+size = Vector2(17.5, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71jhd"]
+size = Vector2(9.5, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_af4s8"]
+shader = ExtResource("2_e7wdv")
+shader_parameter/opacity = 1.0
+shader_parameter/r = 0.0
+shader_parameter/g = 0.0
+shader_parameter/b = 0.0
+shader_parameter/mix_color = 0.0
+
+[sub_resource type="Resource" id="Resource_k60n8"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_1.png"
+
+[sub_resource type="Resource" id="Resource_hghot"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_2.png"
+
+[sub_resource type="Resource" id="Resource_nutsk"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_3.png"
+
+[sub_resource type="Resource" id="Resource_yw8t5"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_4.png"
+
+[sub_resource type="Resource" id="Resource_mhhjf"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_5.png"
+
+[sub_resource type="Resource" id="Resource_cadkn"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_6.png"
+
+[sub_resource type="Resource" id="Resource_hetvs"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_7.png"
+
+[sub_resource type="Resource" id="Resource_nj42s"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack1/Atack1_8.png"
+
+[sub_resource type="Animation" id="Animation_854np"]
+resource_name = "Ataque_1"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.23333333, 0.3, 0.36666667, 0.43333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_k60n8"), SubResource("Resource_hghot"), SubResource("Resource_nutsk"), SubResource("Resource_yw8t5"), SubResource("Resource_mhhjf"), SubResource("Resource_cadkn"), SubResource("Resource_hetvs"), SubResource("Resource_nj42s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 4.0000005)]
+}
+
+[sub_resource type="Resource" id="Resource_vhphb"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_1.png"
+
+[sub_resource type="Resource" id="Resource_46oj4"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_2.png"
+
+[sub_resource type="Resource" id="Resource_m6t11"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_3.png"
+
+[sub_resource type="Resource" id="Resource_taukq"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_4.png"
+
+[sub_resource type="Resource" id="Resource_lne5s"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_5.png"
+
+[sub_resource type="Resource" id="Resource_p8wti"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_6.png"
+
+[sub_resource type="Resource" id="Resource_46uce"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_7.png"
+
+[sub_resource type="Resource" id="Resource_ndhd8"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Atack2/Atack2_8.png"
+
+[sub_resource type="Animation" id="Animation_mo0d6"]
+resource_name = "Ataque_2"
+length = 0.8666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_vhphb"), SubResource("Resource_46oj4"), SubResource("Resource_m6t11"), SubResource("Resource_taukq"), SubResource("Resource_lne5s"), SubResource("Resource_p8wti"), SubResource("Resource_46uce"), SubResource("Resource_ndhd8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 5.9604645e-08)]
+}
+
+[sub_resource type="Resource" id="Resource_fb71e"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Bloqueo/Block_1.png"
+
+[sub_resource type="Animation" id="Animation_xdm6o"]
+resource_name = "Bloqueo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_fb71e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 5)]
+}
+
+[sub_resource type="Resource" id="Resource_npiob"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage2.png"
+
+[sub_resource type="Resource" id="Resource_jb5a1"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage3.png"
+
+[sub_resource type="Resource" id="Resource_uvhmj"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage4.png"
+
+[sub_resource type="Resource" id="Resource_mvig8"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage6.png"
+
+[sub_resource type="Resource" id="Resource_bin1l"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage6.png"
+
+[sub_resource type="Resource" id="Resource_7ufpm"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage6.png"
+
+[sub_resource type="Resource" id="Resource_m2d2m"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage8.png"
+
+[sub_resource type="Resource" id="Resource_v8avk"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage8.png"
+
+[sub_resource type="Resource" id="Resource_vpsnc"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Caida/Damage9.png"
+
+[sub_resource type="Animation" id="Animation_78a07"]
+resource_name = "Caida"
+length = 1.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333342, 0.2000001, 0.4000001, 0.6000001, 0.76666677, 0.9333334, 1.0666667, 1.2, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_npiob"), SubResource("Resource_jb5a1"), SubResource("Resource_uvhmj"), SubResource("Resource_mvig8"), SubResource("Resource_bin1l"), SubResource("Resource_7ufpm"), SubResource("Resource_m2d2m"), SubResource("Resource_v8avk"), SubResource("Resource_vpsnc")]
+}
+
+[sub_resource type="Resource" id="Resource_6jphc"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr2.png"
+
+[sub_resource type="Animation" id="Animation_vhrbh"]
+resource_name = "Dash_Air"
+length = 0.70001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_6jphc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 7)]
+}
+
+[sub_resource type="Resource" id="Resource_ld6f3"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr2.png"
+
+[sub_resource type="Animation" id="Animation_r74tu"]
+resource_name = "Dash_Smoke_Ground"
+length = 0.70001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_ld6f3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 7)]
+}
+
+[sub_resource type="Resource" id="Resource_w80m6"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial1.png"
+
+[sub_resource type="Resource" id="Resource_sb4gs"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial2.png"
+
+[sub_resource type="Resource" id="Resource_yqa8b"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial3.png"
+
+[sub_resource type="Resource" id="Resource_3nwn8"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial4.png"
+
+[sub_resource type="Resource" id="Resource_1q586"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial5.png"
+
+[sub_resource type="Resource" id="Resource_lg202"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial6.png"
+
+[sub_resource type="Resource" id="Resource_rotw3"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial7.png"
+
+[sub_resource type="Resource" id="Resource_tqn38"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial8.png"
+
+[sub_resource type="Resource" id="Resource_ei4lq"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Especial/Especial9.png"
+
+[sub_resource type="Animation" id="Animation_ya6pe"]
+resource_name = "Especial"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1019768, 0.2039536, 0.30593038, 0.4079072, 0.51167303, 0.6047045, 0.69952506, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_w80m6"), SubResource("Resource_sb4gs"), SubResource("Resource_yqa8b"), SubResource("Resource_3nwn8"), SubResource("Resource_1q586"), SubResource("Resource_lg202"), SubResource("Resource_rotw3"), SubResource("Resource_tqn38"), SubResource("Resource_ei4lq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10.000001, -10.999998)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.56666666),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"crear_especial"
+}]
+}
+
+[sub_resource type="Resource" id="Resource_g4f8l"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_3.png"
+
+[sub_resource type="Resource" id="Resource_j7iqd"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_4.png"
+
+[sub_resource type="Resource" id="Resource_rsvd3"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_5.png"
+
+[sub_resource type="Animation" id="Animation_qfqbw"]
+resource_name = "Fall"
+length = 0.30001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_g4f8l"), SubResource("Resource_j7iqd"), SubResource("Resource_rsvd3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 2)]
+}
+
+[sub_resource type="Resource" id="Resource_0ykjw"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_2.png"
+
+[sub_resource type="Animation" id="Animation_di2o2"]
+resource_name = "Fase1_Agacharse"
+length = 0.033333335
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_0ykjw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 2)]
+}
+
+[sub_resource type="Resource" id="Resource_icr15"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_2.png"
+
+[sub_resource type="Animation" id="Animation_mbhk2"]
+resource_name = "Fase2_Agacharse"
+length = 0.6333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_icr15")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 2)]
+}
+
+[sub_resource type="Resource" id="Resource_kfruo"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Hit/Damage2.png"
+
+[sub_resource type="Resource" id="Resource_rchns"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Hit/Damage1.png"
+
+[sub_resource type="Animation" id="Animation_4dix8"]
+resource_name = "Hit"
+length = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("Resource_kfruo"), SubResource("Resource_rchns")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 2.999999)]
+}
+
+[sub_resource type="Resource" id="Resource_dbthn"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle1.png"
+
+[sub_resource type="Resource" id="Resource_jlbau"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle2.png"
+
+[sub_resource type="Resource" id="Resource_in4jg"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle3.png"
+
+[sub_resource type="Resource" id="Resource_bo7eu"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle4.png"
+
+[sub_resource type="Resource" id="Resource_pexvx"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle5.png"
+
+[sub_resource type="Resource" id="Resource_w367j"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle6.png"
+
+[sub_resource type="Resource" id="Resource_k7hrs"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle7.png"
+
+[sub_resource type="Resource" id="Resource_6qd0k"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle8.png"
+
+[sub_resource type="Resource" id="Resource_5hk7j"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle9.png"
+
+[sub_resource type="Resource" id="Resource_4odko"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle10.png"
+
+[sub_resource type="Animation" id="Animation_eaib4"]
+resource_name = "Idle"
+length = 0.6333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_dbthn"), SubResource("Resource_jlbau"), SubResource("Resource_in4jg"), SubResource("Resource_bo7eu"), SubResource("Resource_pexvx"), SubResource("Resource_w367j"), SubResource("Resource_k7hrs"), SubResource("Resource_6qd0k"), SubResource("Resource_5hk7j"), SubResource("Resource_4odko")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 5)]
+}
+
+[sub_resource type="Resource" id="Resource_hac5a"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_3.png"
+
+[sub_resource type="Resource" id="Resource_3kjao"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_4.png"
+
+[sub_resource type="Resource" id="Resource_kvs16"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Jump/Jump_5.png"
+
+[sub_resource type="Animation" id="Animation_j88y0"]
+resource_name = "Jump"
+length = 0.30001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_hac5a"), SubResource("Resource_3kjao"), SubResource("Resource_kvs16")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 2)]
+}
+
+[sub_resource type="Resource" id="Resource_oedi1"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Idle/Sprites idle1.png"
+
+[sub_resource type="Animation" id="Animation_gkybl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_oedi1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Col_Daño/Ataque_2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 5)]
+}
+
+[sub_resource type="Resource" id="Resource_c7i6l"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr1.png"
+
+[sub_resource type="Resource" id="Resource_nnpe1"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr2.png"
+
+[sub_resource type="Resource" id="Resource_23db2"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr3.png"
+
+[sub_resource type="Resource" id="Resource_8m2vw"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr4.png"
+
+[sub_resource type="Resource" id="Resource_b67ys"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr5.png"
+
+[sub_resource type="Resource" id="Resource_srbgk"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr6.png"
+
+[sub_resource type="Resource" id="Resource_x45gp"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr7.png"
+
+[sub_resource type="Resource" id="Resource_m70j3"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr8.png"
+
+[sub_resource type="Resource" id="Resource_7ltke"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr9.png"
+
+[sub_resource type="Resource" id="Resource_q2txy"]
+metadata/__load_path__ = "res://Assets/Personajes/Warrior/Individual Sprite/Run/Warrior_Run_5.png"
+
+[sub_resource type="Resource" id="Resource_5ghsj"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr10.png"
+
+[sub_resource type="Resource" id="Resource_ym8nh"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr11.png"
+
+[sub_resource type="Resource" id="Resource_g22rq"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr12.png"
+
+[sub_resource type="Resource" id="Resource_yg0or"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr13.png"
+
+[sub_resource type="Resource" id="Resource_poo5f"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr14.png"
+
+[sub_resource type="Resource" id="Resource_cesv5"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr15.png"
+
+[sub_resource type="Resource" id="Resource_cy5lk"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr16.png"
+
+[sub_resource type="Animation" id="Animation_77wt8"]
+resource_name = "Run"
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7.450581e-09, 0.033333346, 0.06666668, 0.10000001, 0.13333334, 0.16666669, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.3001, 0.33333334, 0.36666667, 0.4, 0.43333337, 0.46666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("Resource_c7i6l"), SubResource("Resource_nnpe1"), SubResource("Resource_23db2"), SubResource("Resource_8m2vw"), SubResource("Resource_b67ys"), SubResource("Resource_srbgk"), SubResource("Resource_x45gp"), SubResource("Resource_m70j3"), SubResource("Resource_7ltke"), SubResource("Resource_q2txy"), SubResource("Resource_5ghsj"), SubResource("Resource_ym8nh"), SubResource("Resource_g22rq"), SubResource("Resource_yg0or"), SubResource("Resource_poo5f"), SubResource("Resource_cesv5"), SubResource("Resource_cy5lk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 6)]
+}
+
+[sub_resource type="Resource" id="Resource_ayo86"]
+metadata/__load_path__ = "res://Assets/Personajes/Lum/Run/Sprites correr2.png"
+
+[sub_resource type="Animation" id="Animation_guh48"]
+resource_name = "Slide"
+length = 0.70001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_ayo86")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hnmde"]
+_data = {
+&"Ataque_1": SubResource("Animation_854np"),
+&"Ataque_2": SubResource("Animation_mo0d6"),
+&"Bloqueo": SubResource("Animation_xdm6o"),
+&"Caida": SubResource("Animation_78a07"),
+&"Dash_Air": SubResource("Animation_vhrbh"),
+&"Dash_Smoke_Ground": SubResource("Animation_r74tu"),
+&"Especial": SubResource("Animation_ya6pe"),
+&"Fall": SubResource("Animation_qfqbw"),
+&"Fase1_Agacharse": SubResource("Animation_di2o2"),
+&"Fase2_Agacharse": SubResource("Animation_mbhk2"),
+&"Hit": SubResource("Animation_4dix8"),
+&"Idle": SubResource("Animation_eaib4"),
+&"Jump": SubResource("Animation_j88y0"),
+&"RESET": SubResource("Animation_gkybl"),
+&"Run": SubResource("Animation_77wt8"),
+&"Slide": SubResource("Animation_guh48")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx5k5"]
+size = Vector2(20, 30)
+
+[node name="Lum" type="CharacterBody2D" unique_id=1972453486]
+texture_filter = 1
+collision_mask = 2
+script = ExtResource("1_857ei")
+
+[node name="Colision" type="CollisionShape2D" parent="." unique_id=1835770403]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_vi86t")
+
+[node name="Col_Daño" type="Area2D" parent="." unique_id=2050569901 groups=["P_Punch"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Ataque_1" type="CollisionShape2D" parent="Col_Daño" unique_id=1189079468]
+texture_filter = 1
+position = Vector2(28, 0)
+shape = SubResource("RectangleShape2D_v6isy")
+disabled = true
+debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
+
+[node name="Ataque_2" type="CollisionShape2D" parent="Col_Daño" unique_id=1141034330]
+position = Vector2(29, 5)
+shape = SubResource("RectangleShape2D_71jhd")
+disabled = true
+debug_color = Color(0.913725, 0, 0.713726, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=689189060]
+z_index = 10
+texture_filter = 1
+material = SubResource("ShaderMaterial_af4s8")
+position = Vector2(-5, 5)
+scale = Vector2(0.9358086, 0.975)
+
+[node name="Graficos" type="AnimationPlayer" parent="Sprite2D" unique_id=1079424632]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_hnmde")
+
+[node name="Hurbox" type="Area2D" parent="." unique_id=1240543901]
+visibility_layer = 2
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurbox" unique_id=799996473]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_sx5k5")
+debug_color = Color(0.43229857, 9.62615e-08, 0.20044553, 0.41960785)
+
+[connection signal="animation_finished" from="Sprite2D/Graficos" to="." method="_on_graficos_animation_finished"]
+[connection signal="area_entered" from="Hurbox" to="." method="_on_hurbox_area_entered"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byems0y0avw02"]
 
 [ext_resource type="Texture2D" uid="uid://d1vo8kjk3m5jg" path="res://Assets/Personajes/Dummy/1.png" id="1_3l5gb"]
-[ext_resource type="Script" path="res://Assets/Escenas/Dummy/dummy.gd" id="1_ls61x"]
+[ext_resource type="Script" uid="uid://cwa3jw5vgdvwg" path="res://Assets/Escenas/Dummy/dummy.gd" id="1_ls61x"]
 [ext_resource type="Texture2D" uid="uid://c0oolfs4qjimq" path="res://Assets/Personajes/Dummy/2.png" id="2_ye6wy"]
 [ext_resource type="Texture2D" uid="uid://cx7a5c4ryjy5w" path="res://Assets/Personajes/Dummy/3.png" id="3_esgbc"]
 [ext_resource type="Texture2D" uid="uid://c578wycwjkec0" path="res://Assets/Personajes/Dummy/4.png" id="4_mpbwv"]
@@ -73,8 +73,8 @@ _data = {
 }
 
 [node name="Dummy" type="Area2D" unique_id=918930980]
-collision_layer = 8
-collision_mask = 7
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_ls61x")
 
 [node name="Colision" type="CollisionShape2D" parent="." unique_id=243954415]
