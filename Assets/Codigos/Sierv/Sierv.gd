@@ -62,11 +62,11 @@ func _input(event):
 			_animaciones()
 
 	# NUEVA LÓGICA DE BLOQUEO
-	if Input.is_action_pressed("Bloqueo"): # Nota: Verifica si tu input map usa "Bloqueo_2" para el P2
+	if Input.is_action_pressed("Bloqueo_2"): # Nota: Verifica si tu input map usa "Bloqueo_2" para el P2
 		if is_on_floor() and (estado == "Normal" or estado == "Agachado"):
 			estado = "Bloqueando"
 
-	if Input.is_action_just_released("Bloqueo") and estado == "Bloqueando":
+	if Input.is_action_just_released("Bloqueo_2") and estado == "Bloqueando":
 		estado = "Normal"
 
 
@@ -140,14 +140,11 @@ func _physics_process(delta):
 				crear_duplicado()
 				
 		"Hit":
-			# Gravedad en el aire
+			# Mantiene la gravedad básica si es golpeado en el aire
 			if not is_on_floor():
 				velocity.y += intVY * delta
 			else:
 				velocity.y = 0
-			
-			# LÓGICA CORREGIDA: Frenado paulatino del golpe (retroceso) para que no patine infinitamente
-			velocity.x = move_toward(velocity.x, 0, intVX * delta)
 
 	_animaciones()
 	move_and_slide()
@@ -272,13 +269,9 @@ func crear_duplicado():
 func _ani_change():
 	if estado == "Muerto":
 		return
-
 	if ani.current_animation == "Hit":
 		ani.play("Idle")
-
 	ani.play("Hit")
-
-
 func Hit(posicion_atacante = null):
 	if estado == "Hit":
 		return
@@ -293,9 +286,19 @@ func Hit(posicion_atacante = null):
 	else:
 		var dir = -1 if mirror.flip_h else 1
 		velocity.x = -dir * fuerza_golpe
-
 	ani.play("Hit")
 
 
+func _on_hurtbox_area_entered(area: Area2D):
+	print("SIERV RECIBIO GOLPE")
+	print(area.name)
+	print(area.get_groups())
 
- # # Replace with function body.
+	if area.is_in_group("P_Punch"):
+		vida -= 10		
+		if vida <= 0:
+			vida = 0
+			estado = "Muerto"
+			ani.play("Caida")
+		else:
+			Hit(area.global_position) # Replace with function body.

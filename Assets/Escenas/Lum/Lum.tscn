@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xj2kv1mm05vc"]
 
-[ext_resource type="Script" uid="uid://dvovg71xrda2o" path="res://Assets/Codigos/Lum/Lum.gd" id="1_857ei"]
+[ext_resource type="Script" uid="uid://dvovg71xrda2o" path="res://Assets/Codigos/Lum/Lum1.gd" id="1_857ei"]
 [ext_resource type="Shader" uid="uid://uwufmu600710" path="res://Assets/Escenas/Lum/Alucard.gdshader" id="2_e7wdv"]
 [ext_resource type="Texture2D" uid="uid://dq8vgxsim6oxo" path="res://Assets/Personajes/Lum/Jump/Jump_3.png" id="5_utrqe"]
 [ext_resource type="Texture2D" uid="uid://djrdnt0qshrg7" path="res://Assets/Personajes/Lum/Jump/Jump_4.png" id="6_v5uto"]
@@ -75,7 +75,7 @@ size = Vector2(19, 29.5)
 size = Vector2(17.5, 30.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71jhd"]
-size = Vector2(9.5, 8)
+size = Vector2(21.75, 45.5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_af4s8"]
 shader = ExtResource("2_e7wdv")
@@ -143,26 +143,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/1/path = NodePath("Sprite2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.36666667, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(13, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Col_Daño/Ataque_2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.71),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_xdm6o"]
@@ -609,7 +609,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx5k5"]
 size = Vector2(20, 30)
 
-[node name="Lum" type="CharacterBody2D" unique_id=1972453486]
+[node name="Lum1" type="CharacterBody2D" unique_id=1972453486]
 texture_filter = 1
 collision_mask = 2
 script = ExtResource("1_857ei")
@@ -619,18 +619,18 @@ position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_vi86t")
 
 [node name="Col_Daño" type="Area2D" parent="." unique_id=2050569901 groups=["P_Punch"]]
-collision_layer = 4
+collision_layer = 2
 collision_mask = 18
 
 [node name="Ataque_1" type="CollisionShape2D" parent="Col_Daño" unique_id=1189079468]
 texture_filter = 1
-position = Vector2(28, 5)
+position = Vector2(73, -4)
 shape = SubResource("RectangleShape2D_v6isy")
 disabled = true
 debug_color = Color(0.914947, 8.29774e-05, 0.714501, 0.42)
 
 [node name="Ataque_2" type="CollisionShape2D" parent="Col_Daño" unique_id=1141034330]
-position = Vector2(29, 5)
+position = Vector2(36, 0)
 shape = SubResource("RectangleShape2D_71jhd")
 disabled = true
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
@@ -649,9 +649,9 @@ libraries/ = SubResource("AnimationLibrary_hnmde")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1240543901]
 light_mask = 0
-visibility_layer = 2
+visibility_layer = 0
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=799996473]
 light_mask = 0

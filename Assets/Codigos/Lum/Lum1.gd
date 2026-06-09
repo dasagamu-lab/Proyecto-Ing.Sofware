@@ -261,6 +261,9 @@ func _ani_change():
 
 func Hit(posicion_atacante = null):
 
+	if estado == "Muerto":
+		return
+
 	if estado == "Hit":
 		return
 
@@ -285,6 +288,9 @@ func _on_hurtbox_area_entered(area: Area2D):
 	print("SIERV RECIBIO GOLPE")
 	print(area.name)
 	print(area.get_groups())
+	
+	if estado == "Muerto":
+		return
 
 	if area.is_in_group("P_Punch"):
 		vida -= 10
