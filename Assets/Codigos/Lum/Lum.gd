@@ -29,16 +29,13 @@ var counter_hit : int = 0
 var ataque_actual : String = ""
 
 # Limitadores
-var Can_Dash : int = 1
+var Can_Dash : int = 2
 
 # EFECTOS DASH
 var Time_Actual_Dupli : float = 0
 var Time_Dupli : float = 0.05
 var Time_Life_Dupli : float = 0.2
 
-func _ready():
-	$"Col_Daño/Ataque_1".disabled = true
-	$"Col_Daño/Ataque_2".disabled = true
 
 func _input(event):
 	# ATAQUE 1
@@ -123,7 +120,7 @@ func _physics_process(delta):
 			Time_Actual_Dupli += delta
 			velocity.y = 0
 
-			var dir = -1 if mirror.flip_h else 1
+			var dir = sign(mirror.scale.x)
 			velocity.x = (intVX_Dash * dir) * delta
 
 			if Time_Actual_Dupli >= Time_Dupli:
@@ -141,16 +138,13 @@ func _physics_process(delta):
 	_animaciones()
 	move_and_slide()
 
+var sprite_pos_atacando = Vector2.ZERO
+
 func _animaciones():
-	# Dirección sprite
-	if intMove != 0:
-		mirror.flip_h = (intMove == -1)
-
-	var side = -1 if mirror.flip_h else 1
-
-	$Colision.position.x = 5 * side
-	$"Col_Daño/Ataque_1".position.x = 24.25 * side
-	$"Col_Daño/Ataque_2".position.x = 18 * side
+	if intMove == -1:
+		mirror.scale.x = -1
+	elif intMove == 1:
+		mirror.scale.x = 1
 
 	# Animaciones
 	match estado:
@@ -177,7 +171,10 @@ func _animaciones():
 				ani.play("Dash_Air")
 
 		"Atacando":
+			# GUARDAR POSICIÓN Y CONGELARLA DURANTE ATAQUE
+			sprite_pos_atacando = mirror.position
 			ani.play(ataque_actual, -1, 1.8)
+			mirror.position = sprite_pos_atacando  # Forzar posición
 
 		"Bloqueando":
 			ani.play("Bloqueo")
@@ -189,10 +186,6 @@ func _animaciones():
 			if ani.current_animation != "Hit":
 				ani.play("Hit")
 
-	# Seguridad hitboxes
-	if estado != "Atacando":
-		$"Col_Daño/Ataque_1".disabled = true
-		$"Col_Daño/Ataque_2".disabled = true
 
 func _on_graficos_animation_finished(anim_name):
 	match anim_name:
@@ -260,7 +253,6 @@ func _ani_change():
 
 
 func Hit(posicion_atacante = null):
-
 	if estado == "Muerto":
 		return
 
@@ -270,14 +262,11 @@ func Hit(posicion_atacante = null):
 	estado = "Hit"
 
 	if posicion_atacante != null:
-
 		if posicion_atacante.x < global_position.x:
 			velocity.x = fuerza_golpe
 		else:
 			velocity.x = -fuerza_golpe
-
 	else:
-
 		var dir = -1 if mirror.flip_h else 1
 		velocity.x = -dir * fuerza_golpe
 
@@ -285,7 +274,7 @@ func Hit(posicion_atacante = null):
 
 
 func _on_hurtbox_area_entered(area: Area2D):
-	print("SIERV RECIBIO GOLPE")
+	print("Lum RECIBIO GOLPE")
 	print(area.name)
 	print(area.get_groups())
 	
@@ -299,4 +288,4 @@ func _on_hurtbox_area_entered(area: Area2D):
 			estado = "Muerto"
 			ani.play("Caida")
 		else:
-			Hit(area.global_position) # Replace with function body.
+			Hit(area.global_position)

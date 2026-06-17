@@ -5,7 +5,7 @@ class_name player2
 var intVX : int = 10000
 var intVY : int = 480
 var intVX_Dash : int = 18000
-var Especial = preload("res://Assets/Escenas/Lum/especial.tscn") # <-- AÑADIDO: Carga del especial
+var Especial = preload("res://Assets/Escenas/Lum/especial.tscn")
 var vida : int = 100
 var fuerza_golpe = 120
 
@@ -38,12 +38,11 @@ var Time_Life_Dupli : float = 0.2
 
 
 func _ready():
-	$"Col_Daño/Ataque_1".disabled = true
-	$"Col_Daño/Ataque_2".disabled = true
+	# Las hitboxes ahora se controlan desde el AnimationPlayer, nacen desactivadas.
+	pass
 
 
 func _input(event):
-	# Si está muerto, no procesa entradas
 	if estado == "Muerto":
 		return
 
@@ -62,7 +61,7 @@ func _input(event):
 			_animaciones()
 
 	# NUEVA LÓGICA DE BLOQUEO
-	if Input.is_action_pressed("Bloqueo_2"): # Nota: Verifica si tu input map usa "Bloqueo_2" para el P2
+	if Input.is_action_pressed("Bloqueo_2"):
 		if is_on_floor() and (estado == "Normal" or estado == "Agachado"):
 			estado = "Bloqueando"
 
@@ -71,26 +70,24 @@ func _input(event):
 
 
 func _physics_process(delta):
-	# LÓGICA CORREGIDA: Si muere, se detiene todo el procesamiento inmediatamente
 	if estado == "Muerto":
 		return
 
-	if Input.is_action_just_pressed("Especial"):
+	if Input.is_action_just_pressed("Especial_2"):
 		if estado != "Atacando" and estado != "Dash":
-			estado = "Especial"
-			crear_especial() # <-- AÑADIDO: Invoca la función del proyectil
+			estado = "Especial_2"
+			crear_especial()
 
 	if is_on_floor():
 		Can_Dash = 1
 
-	# Agacharse (Mantiene controles _1 si así lo configuraste, cámbialos a _2 si lo requieres)
 	if Input.is_action_pressed("Abajo_1") and is_on_floor() and estado == "Normal":
 		estado = "Agachado"
 	elif Input.is_action_just_released("Abajo_1") and is_on_floor() and estado == "Agachado":
 		estado = "Normal"
 
 	# Movimiento
-	if estado != "Bloqueando" and estado != "Atacando" and estado != "Especial" and estado != "Hit":
+	if estado != "Bloqueando" and estado != "Atacando" and estado != "Especial_2" and estado != "Hit":
 		if Input.is_action_pressed("Derecha_2"):
 			intMove = 1
 		elif Input.is_action_pressed("Izquierda_2"):
@@ -103,7 +100,7 @@ func _physics_process(delta):
 	# Dash
 	if Input.is_action_just_pressed("Dash_2") and Can_Dash > 0 and estado != "Bloqueando":
 		estado = "Dash"
-		Can_Dash -= 1 # LÓGICA CORREGIDA: Resta 1 en vez de 5 para un control limpio
+		Can_Dash -= 1
 
 	# MAQUINA DE ESTADOS
 	match estado:
@@ -124,7 +121,7 @@ func _physics_process(delta):
 			if Input.is_action_just_released("Salto_1") and velocity.y < 0:
 				velocity.y *= 0.5
 
-		"Agachado", "Bloqueando", "Atacando", "Especial":
+		"Agachado", "Bloqueando", "Atacando", "Especial_2":
 			velocity.x = 0
 			velocity.y = 0
 
@@ -140,7 +137,6 @@ func _physics_process(delta):
 				crear_duplicado()
 				
 		"Hit":
-			# Mantiene la gravedad básica si es golpeado en el aire
 			if not is_on_floor():
 				velocity.y += intVY * delta
 			else:
@@ -153,16 +149,11 @@ func _physics_process(delta):
 func _animaciones():
 	if estado == "Muerto":
 		return
+	if intMove == -1:
+		mirror.scale.x = -1
+	elif intMove == 1:
+		mirror.scale.x = 1
 
-	# Dirección sprite
-	if intMove != 0:
-		mirror.flip_h = (intMove == -1)
-
-	var side = -1 if mirror.flip_h else 1
-
-	$Colision.position.x = 5 * side
-	$"Col_Daño/Ataque_1".position.x = 50.25 * side
-	$"Col_Daño/Ataque_2".position.x = 50 * side
 
 	# Animaciones
 	match estado:
@@ -181,7 +172,7 @@ func _animaciones():
 
 		"Dash":
 			if is_on_floor():
-				if Input.is_action_pressed("Abajo"): # Verifica si aquí necesitas "Abajo_2"
+				if Input.is_action_pressed("Abajo"): 
 					ani.play("Slide", -1, 1.8)
 				else:
 					ani.play("Dash_Smoke_Ground", -1, 2.5)
@@ -194,17 +185,12 @@ func _animaciones():
 		"Bloqueando":
 			ani.play("Bloqueo")
 			
-		"Especial": # LÓGICA CORREGIDA: Añadido el caso para que no se congele al tirar el poder
-			ani.play("Especial")
+		"Especial_2": 
+			ani.play("Especial_2")
 			
 		"Hit":
 			if ani.current_animation != "Hit":
 				ani.play("Hit")
-
-	# Seguridad hitboxes
-	if estado != "Atacando":
-		$"Col_Daño/Ataque_1".disabled = true
-		$"Col_Daño/Ataque_2".disabled = true
 
 
 func _on_graficos_animation_finished(anim_name):
@@ -228,14 +214,13 @@ func _on_graficos_animation_finished(anim_name):
 			counter_hit = 0
 			estado = "Normal"
 
-		"Especial":
+		"Especial_2":
 			estado = "Normal"
 			
 		"Hit":
 			estado = "Normal"
 
 
-# LÓGICA CORREGIDA: Añadida la función para instanciar el proyectil del P2
 func crear_especial():
 	var proyectil = Especial.instantiate()
 	proyectil.global_position = global_position
@@ -272,6 +257,8 @@ func _ani_change():
 	if ani.current_animation == "Hit":
 		ani.play("Idle")
 	ani.play("Hit")
+
+
 func Hit(posicion_atacante = null):
 	if estado == "Hit":
 		return
@@ -299,6 +286,7 @@ func _on_hurtbox_area_entered(area: Area2D):
 		if vida <= 0:
 			vida = 0
 			estado = "Muerto"
+			
 			ani.play("Caida")
 		else:
-			Hit(area.global_position) # Replace with function body.
+			Hit(area.global_position)
