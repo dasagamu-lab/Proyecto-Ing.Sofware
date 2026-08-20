@@ -21,9 +21,8 @@ texture = ExtResource("2_a0jbp")
 
 [node name="Rastro" type="CPUParticles2D" parent="." unique_id=1170574847]
 texture_filter = 1
-position = Vector2(52, 5)
-amount = 452
-spread = 42.33
-initial_velocity_min = 9.95
-initial_velocity_max = 9.95
+position = Vector2(50, 10)
+amount = 500
+spread = 135.62
+initial_velocity_max = 164.63
 color = Color(0.8999233, 0.5073138, 0.15377262, 1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl4xupsw6trte"
-path="res://.godot/imported/Sprites correr10.png-d7fc2533ab7298e1923733493b7a9b19.ctex"
+uid="uid://dxwglbtk3vxho"
+path="res://.godot/imported/Sprites correr1-sheet.png-9f770092d2be09207a0765b838ddb4fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Run/Sprites correr10.png"
-dest_files=["res://.godot/imported/Sprites correr10.png-d7fc2533ab7298e1923733493b7a9b19.ctex"]
+source_file="res://Assets/Personajes/Lum/Run/Sprites correr1-sheet.png"
+dest_files=["res://.godot/imported/Sprites correr1-sheet.png-9f770092d2be09207a0765b838ddb4fa.ctex"]
 
 [params]
 

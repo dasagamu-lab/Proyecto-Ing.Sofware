@@ -1,58 +1,36 @@
-extends CharacterBody2D
-class_name Player
+extends Jugador
+class_name Lum
 
-# VELOCIDADES
-var intVX : int = 10000
-var intVY : int = 480
-var intVX_Dash : int = 18000
+# ATAQUES Y HABILIDADES EXCLUSIVAS DEL JUGADOR
 var Especial = preload("res://Assets/Escenas/Lum/especial.tscn")
-var vida : int = 100
-var fuerza_golpe = 120
-
-# FISICAS
-var Jump_Height : int = 240
-
-# Coyote Time
-var max_coyote_time = 0.2
-var coyote_time = 0.0
-
-# ESTADOS
-var intMove : int = 0
-var estado = "Normal" # (Normal, Agachado, Dash, Atacando, Bloqueando, Hit)
-
-# NODO DE ANIMACIÓN
-@onready var ani = $Sprite2D/Graficos
-@onready var mirror = $Sprite2D
-
-# ATAQUES
 var counter_hit : int = 0
 var ataque_actual : String = ""
 
-# Limitadores
-var Can_Dash : int = 2
-
-# EFECTOS DASH
+# EFECTOS DASH (Visuales propios de Lum)
 var Time_Actual_Dupli : float = 0
 var Time_Dupli : float = 0.05
 var Time_Life_Dupli : float = 0.2
 
+var sprite_pos_atacando = Vector2.ZERO
 
+# ---------------------------------------------------------
+# CONTROLES Y FÍSICAS EXCLUSIVAS
+# ---------------------------------------------------------
 func _input(event):
-	# ATAQUE 1
 	if Input.is_action_just_pressed("Atacar"):
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 			estado = "Atacando"
 			ataque_actual = "Ataque_1"
-			_animaciones()
+			ani.play(ataque_actual, 1.8)
+			$AnimationPlayer.play(ataque_actual)
 
-	# ATAQUE 2 (TECLA G)
 	if Input.is_action_just_pressed("Ataque_2"):
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 			estado = "Atacando"
 			ataque_actual = "Ataque_2"
-			_animaciones()
+			ani.play(ataque_actual, 1.8)
+			$AnimationPlayer.play(ataque_actual)
 
-	# NUEVA LÓGICA DE BLOQUEO
 	if Input.is_action_pressed("Bloqueo"):
 		if is_on_floor() and (estado == "Normal" or estado == "Agachado"):
 			estado = "Bloqueando"
@@ -71,13 +49,11 @@ func _physics_process(delta):
 	if is_on_floor():
 		Can_Dash = 1
 
-	# Agacharse
 	if Input.is_action_pressed("Abajo") and is_on_floor() and estado == "Normal":
 		estado = "Agachado"
 	elif Input.is_action_just_released("Abajo") and is_on_floor() and estado == "Agachado":
 		estado = "Normal"
 
-	# Movimiento
 	if estado != "Bloqueando" and estado != "Atacando" and estado != "Especial" and estado != "Hit":
 		if Input.is_action_pressed("Derecha"):
 			intMove = 1
@@ -88,12 +64,10 @@ func _physics_process(delta):
 	else:
 		intMove = 0
 
-	# Dash
 	if Input.is_action_just_pressed("Dash") and Can_Dash > 0 and estado != "Bloqueando":
 		estado = "Dash"
 		Can_Dash -= 1
 
-	# MAQUINA DE ESTADOS
 	match estado:
 		"Normal":
 			if is_on_floor():
@@ -119,7 +93,6 @@ func _physics_process(delta):
 		"Dash":
 			Time_Actual_Dupli += delta
 			velocity.y = 0
-
 			var dir = sign(mirror.scale.x)
 			velocity.x = (intVX_Dash * dir) * delta
 
@@ -128,74 +101,94 @@ func _physics_process(delta):
 				crear_duplicado()
 				
 		"Hit":
-			# Mantiene la gravedad básica si es golpeado en el aire
 			if not is_on_floor():
 				velocity.y += intVY * delta
 			else:
 				velocity.y = 0
-			# Nota: velocity.x no se toca aquí para permitir que la fuerza del retroceso (knockback) funcione.
 
 	_animaciones()
 	move_and_slide()
 
-var sprite_pos_atacando = Vector2.ZERO
-
+# ---------------------------------------------------------
+# ANIMACIONES Y EFECTOS
+# ---------------------------------------------------------
 func _animaciones():
 	if intMove == -1:
 		mirror.scale.x = -1
 	elif intMove == 1:
 		mirror.scale.x = 1
 
-	# Animaciones
 	match estado:
 		"Normal":
 			if is_on_floor():
 				if velocity.x == 0:
-					ani.play("Idle", -1, 0.8)
+					ani.play("Idle", 0.8)
 				else:
-					ani.play("Run", -1, 1.1)
+					ani.play("Run", 1.1)
 			else:
 				ani.play("Jump" if velocity.y < 0 else "Fall")
-
 		"Agachado":
 			if ani.current_animation != "Fase2_Agacharse":
 				ani.play("Fase1_Agacharse")
-
 		"Dash":
 			if is_on_floor():
 				if Input.is_action_pressed("Abajo"):
-					ani.play("Slide", -1, 1.8)
+					ani.play("Slide", 1.8)
 				else:
-					ani.play("Dash_Smoke_Ground", -1, 2.5)
+					ani.play("Dash", 2.5)
 			else:
-				ani.play("Dash_Air")
-
+				ani.play("Dash_Aire")
 		"Atacando":
-			# GUARDAR POSICIÓN Y CONGELARLA DURANTE ATAQUE
 			sprite_pos_atacando = mirror.position
-			ani.play(ataque_actual, -1, 1.8)
-			mirror.position = sprite_pos_atacando  # Forzar posición
-
+			# Solo reproduce la animación si no es la que está activa actualmente
+			if ani.animation != ataque_actual:
+				ani.play(ataque_actual,  1.8)
+			mirror.position = sprite_pos_atacando
 		"Bloqueando":
 			ani.play("Bloqueo")
-
 		"Especial":
 			ani.play("Especial")
-
 		"Hit":
 			if ani.current_animation != "Hit":
 				ani.play("Hit")
 
 
-func _on_graficos_animation_finished(anim_name):
-	match anim_name:
-		"Dash_Smoke_Ground", "Dash_Air":
+
+func crear_especial():
+	var proyectil = Especial.instantiate()
+	proyectil.global_position = global_position
+	if mirror.flip_h:
+		proyectil.direction = -1
+	else:
+		proyectil.direction = 1
+	get_parent().add_child(proyectil)
+
+func crear_duplicado():
+	var duplicado = $AnimatedSprite2D.duplicate(true)
+	duplicado.material = $AnimatedSprite2D.material.duplicate(true)
+	duplicado.material.set_shader_parameter("opacity", 0.3)
+	duplicado.material.set_shader_parameter("b", 0.8)
+	duplicado.material.set_shader_parameter("mix_color", 0.7)
+	duplicado.global_position = $AnimatedSprite2D.global_position
+	duplicado.global_scale = $AnimatedSprite2D.global_scale
+	duplicado.z_index -= 1
+	get_parent().add_child(duplicado)
+	await get_tree().create_timer(Time_Life_Dupli).timeout
+	duplicado.queue_free()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	match ani.animation:
+		"Dash", "Dash_Aire":
 			estado = "Normal"
-
+			
 		"Slide":
-			estado = "Agachado" if Input.is_action_pressed("Abajo") else "Normal"
+			if Input.is_action_pressed("Abajo"):
+				estado = "Agachado"
+			else:
+				estado = "Normal"
 			Can_Dash = 1
-
+			
 		"Ataque_1":
 			if counter_hit > 1:
 				counter_hit = 0
@@ -203,89 +196,14 @@ func _on_graficos_animation_finished(anim_name):
 			else:
 				counter_hit = 0
 				estado = "Normal"
-
+				
 		"Ataque_2":
 			counter_hit = 0
 			estado = "Normal"
-
+			
 		"Especial":
 			estado = "Normal"
-
+			
 		"Hit":
 			estado = "Normal"
-
-func crear_especial():
-	var proyectil = Especial.instantiate()
-	proyectil.global_position = global_position
-
-	if mirror.flip_h:
-		proyectil.direction = -1
-	else:
-		proyectil.direction = 1
-
-	get_parent().add_child(proyectil)
-
-func crear_duplicado():
-	var duplicado = $Sprite2D.duplicate(true)
-
-	duplicado.material = $Sprite2D.material.duplicate(true)
-	duplicado.material.set_shader_parameter("opacity", 0.3)
-	duplicado.material.set_shader_parameter("b", 0.8)
-	duplicado.material.set_shader_parameter("mix_color", 0.7)
-
-	duplicado.global_position = $Sprite2D.global_position
-	duplicado.global_scale = $Sprite2D.global_scale
-	duplicado.z_index -= 1
-
-	get_parent().add_child(duplicado)
-
-	await get_tree().create_timer(Time_Life_Dupli).timeout
-	duplicado.queue_free()
-
-func _ani_change():
-	if estado == "Muerto":
-		return
-
-	if ani.current_animation == "Hit":
-		ani.play("Idle")
-
-	ani.play("Hit")
-
-
-func Hit(posicion_atacante = null):
-	if estado == "Muerto":
-		return
-
-	if estado == "Hit":
-		return
-
-	estado = "Hit"
-
-	if posicion_atacante != null:
-		if posicion_atacante.x < global_position.x:
-			velocity.x = fuerza_golpe
-		else:
-			velocity.x = -fuerza_golpe
-	else:
-		var dir = -1 if mirror.flip_h else 1
-		velocity.x = -dir * fuerza_golpe
-
-	ani.play("Hit")
-
-
-func _on_hurtbox_area_entered(area: Area2D):
-	print("Lum RECIBIO GOLPE")
-	print(area.name)
-	print(area.get_groups())
-	
-	if estado == "Muerto":
-		return
-
-	if area.is_in_group("P_Punch"):
-		vida -= 10
-		if vida <= 0:
-			vida = 0
-			estado = "Muerto"
-			ani.play("Caida")
-		else:
-			Hit(area.global_position)
+	pass # Replace with function body.

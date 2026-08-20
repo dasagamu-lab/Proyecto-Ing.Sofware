@@ -37,9 +37,6 @@ var Time_Dupli : float = 0.05
 var Time_Life_Dupli : float = 0.2
 
 
-func _ready():
-	# Las hitboxes ahora se controlan desde el AnimationPlayer, nacen desactivadas.
-	pass
 
 
 func _input(event):
