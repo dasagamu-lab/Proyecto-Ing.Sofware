@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5n7f48nshnb"
-path="res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"
+uid="uid://siynthw7wei"
+path="res://.godot/imported/Hit1-sheet.png-7402ed2c0fae94bc7bc2eab037eaf5b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Bloqueo/Block_1.png"
-dest_files=["res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"]
+source_file="res://Assets/Personajes/Sierv/Hit/Hit1-sheet.png"
+dest_files=["res://.godot/imported/Hit1-sheet.png-7402ed2c0fae94bc7bc2eab037eaf5b2.ctex"]
 
 [params]
 

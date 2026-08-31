@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5n7f48nshnb"
-path="res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"
+uid="uid://chwyvaoxygexm"
+path="res://.godot/imported/Walk1-sheet.png-7167e25aa64fc15e126d98615c6cf95b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Bloqueo/Block_1.png"
-dest_files=["res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"]
+source_file="res://Assets/Personajes/Sierv/Correr/Walk1-sheet.png"
+dest_files=["res://.godot/imported/Walk1-sheet.png-7167e25aa64fc15e126d98615c6cf95b.ctex"]
 
 [params]
 

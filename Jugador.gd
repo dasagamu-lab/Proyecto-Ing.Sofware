@@ -19,6 +19,8 @@ var estado : String = "Normal"
 var intMove : int = 0
 var Can_Dash : int = 2
 
+
+
 # NODOS VISUALES
 @onready var ani = $AnimatedSprite2D
 @onready var mirror = $AnimatedSprite2D

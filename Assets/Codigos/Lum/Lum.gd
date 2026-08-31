@@ -43,8 +43,10 @@ func _physics_process(delta):
 		return
 
 	if Input.is_action_just_pressed("Especial"):
-		if estado != "Atacando" and estado != "Dash":
+		if is_on_floor() and estado != "Atacando" and estado != "Dash":
 			estado = "Especial"
+			ani.play("Especial")
+			$AnimationPlayer.play("Especial")
 
 	if is_on_floor():
 		Can_Dash = 1
@@ -115,8 +117,10 @@ func _physics_process(delta):
 func _animaciones():
 	if intMove == -1:
 		mirror.scale.x = -1
+		$Col_Daño.scale.x = -1
 	elif intMove == 1:
 		mirror.scale.x = 1
+		$Col_Daño.scale.x = 1
 
 	match estado:
 		"Normal":
@@ -128,7 +132,7 @@ func _animaciones():
 			else:
 				ani.play("Jump" if velocity.y < 0 else "Fall")
 		"Agachado":
-			if ani.current_animation != "Fase2_Agacharse":
+			if ani.animation != "Fase2_Agacharse":
 				ani.play("Fase1_Agacharse")
 		"Dash":
 			if is_on_floor():
@@ -142,25 +146,22 @@ func _animaciones():
 			sprite_pos_atacando = mirror.position
 			# Solo reproduce la animación si no es la que está activa actualmente
 			if ani.animation != ataque_actual:
-				ani.play(ataque_actual,  1.8)
+				ani.play(ataque_actual, 1.8)
 			mirror.position = sprite_pos_atacando
 		"Bloqueando":
 			ani.play("Bloqueo")
 		"Especial":
 			ani.play("Especial")
 		"Hit":
-			if ani.current_animation != "Hit":
+			if ani.animation!= "Hit":
 				ani.play("Hit")
-
-
 
 func crear_especial():
 	var proyectil = Especial.instantiate()
 	proyectil.global_position = global_position
-	if mirror.flip_h:
-		proyectil.direction = -1
-	else:
-		proyectil.direction = 1
+	# Determina la dirección según la escala del sprite (1 si mira a la derecha, -1 si mira a la izquierda)
+	var dir = sign(mirror.scale.x)
+	proyectil.direction = dir if dir != 0 else 1
 	get_parent().add_child(proyectil)
 
 func crear_duplicado():
@@ -175,7 +176,6 @@ func crear_duplicado():
 	get_parent().add_child(duplicado)
 	await get_tree().create_timer(Time_Life_Dupli).timeout
 	duplicado.queue_free()
-
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	match ani.animation:

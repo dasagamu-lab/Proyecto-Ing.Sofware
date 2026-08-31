@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dvovg71xrda2o" path="res://Assets/Codigos/Lum/Lum.gd" id="1_857ei"]
 [ext_resource type="Shader" uid="uid://uwufmu600710" path="res://Assets/Escenas/Lum/Alucard.gdshader" id="2_vhphb"]
+[ext_resource type="Texture2D" uid="uid://u6ye81syyawe" path="res://Assets/Personajes/Lum/Jump/Jump_2.png" id="3_46oj4"]
 [ext_resource type="Texture2D" uid="uid://c1hxbq8hapiua" path="res://Assets/Personajes/Lum/Atack1/Atack1-sheet.png" id="3_c7i6l"]
 [ext_resource type="Texture2D" uid="uid://dwg27dcxech30" path="res://Assets/Personajes/Lum/Atack2/Atack2_1-sheet.png" id="3_cadkn"]
-[ext_resource type="Texture2D" uid="uid://duldj6vpkfj1f" path="res://Assets/Personajes/Lum/Bloqueo/Block_1.png" id="4_hetvs"]
+[ext_resource type="Texture2D" uid="uid://d5n7f48nshnb" path="res://Assets/Personajes/Lum/Bloqueo/Block_1.png" id="4_hetvs"]
 [ext_resource type="Texture2D" uid="uid://b5y4q8ynd7nqa" path="res://Assets/Personajes/Lum/Idle/Sprites idle1-sheet.png" id="5_nj42s"]
 [ext_resource type="Texture2D" uid="uid://4swmibuoh0ib" path="res://Assets/Personajes/Lum/Dash/Sprites correr10.png" id="5_vhphb"]
 [ext_resource type="Texture2D" uid="uid://c7iuuwtnq8f5f" path="res://Assets/Personajes/Lum/Hit/Damage1-sheet.png" id="6_hetvs"]
@@ -23,6 +24,79 @@ size = Vector2(17.5, 31.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71jhd"]
 size = Vector2(21.875, 48)
 
+[sub_resource type="Animation" id="Animation_hetvs"]
+resource_name = "Ataque_1"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_vhphb"]
+resource_name = "Ataque_2"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Col_Daño/Ataque_2:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_46oj4"]
+resource_name = "Especial"
+length = 1.1666666
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"crear_especial"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_nj42s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Col_Daño/Ataque_1:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46oj4"]
+_data = {
+&"Ataque_1": SubResource("Animation_hetvs"),
+&"Ataque_2": SubResource("Animation_vhphb"),
+&"Especial": SubResource("Animation_46oj4"),
+&"RESET": SubResource("Animation_nj42s")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yehu8"]
 shader = ExtResource("2_vhphb")
 shader_parameter/opacity = 1.0
@@ -30,6 +104,10 @@ shader_parameter/r = 0.0
 shader_parameter/g = 0.0
 shader_parameter/b = 0.0
 shader_parameter/mix_color = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srbgk"]
+atlas = ExtResource("3_46oj4")
+region = Rect2(0, 0, 46, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k60n8"]
 atlas = ExtResource("3_c7i6l")
@@ -111,13 +189,13 @@ region = Rect2(0, 0, 48, 48)
 atlas = ExtResource("5_vhphb")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6qd0k"]
-atlas = ExtResource("3_c7i6l")
-region = Rect2(0, 0, 70, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hk7j"]
 atlas = ExtResource("3_c7i6l")
 region = Rect2(70, 0, 70, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qd0k"]
+atlas = ExtResource("3_c7i6l")
+region = Rect2(0, 0, 70, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4odko"]
 atlas = ExtResource("3_c7i6l")
@@ -146,6 +224,14 @@ region = Rect2(138, 0, 46, 46)
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7hrs"]
 atlas = ExtResource("6_vhphb")
 region = Rect2(184, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m70j3"]
+atlas = ExtResource("3_46oj4")
+region = Rect2(0, 0, 46, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x45gp"]
+atlas = ExtResource("3_46oj4")
+region = Rect2(0, 0, 46, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oedi1"]
 atlas = ExtResource("6_hetvs")
@@ -287,6 +373,14 @@ region = Rect2(720, 0, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_srbgk")
+}],
+"loop": 1,
+"name": &"Agacharse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_k60n8")
 }, {
 "duration": 1.0,
@@ -374,23 +468,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8m2vw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m2vw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m2vw")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Dash_Aire",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6qd0k")
+"texture": SubResource("AtlasTexture_5hk7j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5hk7j")
+"texture": SubResource("AtlasTexture_6qd0k")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4odko")
@@ -402,11 +490,20 @@ animations = [{
 "texture": SubResource("AtlasTexture_3kjao")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_46uce")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kvs16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hetvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj42s")
 }],
 "loop": 0,
 "name": &"Especial",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -424,6 +521,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_m70j3")
+}],
+"loop": 0,
+"name": &"Fase1_Agacharse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x45gp")
+}],
+"loop": 1,
+"name": &"Fase2_Agacharse",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_oedi1")
 }, {
 "duration": 1.0,
@@ -434,7 +547,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Hit",
-"speed": 5.0
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -545,60 +658,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Animation" id="Animation_hetvs"]
-resource_name = "Ataque_1"
-length = 0.36666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Col_Daño/Ataque_1:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-
-[sub_resource type="Animation" id="Animation_vhphb"]
-resource_name = "Ataque_2"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Col_Daño/Ataque_2:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-
-[sub_resource type="Animation" id="Animation_nj42s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Col_Daño/Ataque_1:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_46oj4"]
-_data = {
-&"Ataque_1": SubResource("Animation_hetvs"),
-&"Ataque_2": SubResource("Animation_vhphb"),
-&"RESET": SubResource("Animation_nj42s")
-}
-
 [node name="Lum" type="CharacterBody2D" unique_id=1972453486]
 texture_filter = 1
 collision_mask = 2
@@ -609,8 +668,8 @@ position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_vi86t")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1240543901]
-light_mask = 0
-visibility_layer = 0
+light_mask = 4
+visibility_layer = 2
 collision_layer = 2
 collision_mask = 4
 
@@ -622,7 +681,7 @@ debug_color = Color(0.16317675, 0.23452586, 0.29956064, 0.41960785)
 
 [node name="Col_Daño" type="Area2D" parent="." unique_id=2050569901 groups=["P_Punch"]]
 collision_layer = 2
-collision_mask = 18
+collision_mask = 4
 
 [node name="Ataque_1" type="CollisionShape2D" parent="Col_Daño" unique_id=1189079468]
 texture_filter = 1
@@ -637,14 +696,14 @@ shape = SubResource("RectangleShape2D_71jhd")
 disabled = true
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2098702610]
-material = SubResource("ShaderMaterial_yehu8")
-position = Vector2(0, -2)
-sprite_frames = SubResource("SpriteFrames_vhphb")
-animation = &"Ataque_2"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=450208413]
 libraries/ = SubResource("AnimationLibrary_46oj4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2098702610]
+material = SubResource("ShaderMaterial_yehu8")
+sprite_frames = SubResource("SpriteFrames_vhphb")
+animation = &"Ataque_1"
+frame = 7
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

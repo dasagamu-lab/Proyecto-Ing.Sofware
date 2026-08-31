@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csiebt13qc30v"
-path="res://.godot/imported/Block_2.png-747959d73f537ef74c5566c222ed95d0.ctex"
+uid="uid://cq6elkx2l1ev6"
+path="res://.godot/imported/Walk9.png-317427bf85fc80f3b69f9b82cde3163b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Bloqueo/Block_2.png"
-dest_files=["res://.godot/imported/Block_2.png-747959d73f537ef74c5566c222ed95d0.ctex"]
+source_file="res://Assets/Personajes/Sierv/Correr/Walk9.png"
+dest_files=["res://.godot/imported/Walk9.png-317427bf85fc80f3b69f9b82cde3163b.ctex"]
 
 [params]
 

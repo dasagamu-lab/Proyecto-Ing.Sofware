@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5n7f48nshnb"
-path="res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"
+uid="uid://qk7hiccs8gl8"
+path="res://.godot/imported/Sierv1-sheet.png-b43300aff3acd85f1c9f4d16559545ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personajes/Lum/Bloqueo/Block_1.png"
-dest_files=["res://.godot/imported/Block_1.png-4c2af7cafba59e3c4c45514db40f1d41.ctex"]
+source_file="res://Assets/Personajes/Sierv/Ataque 2/Sierv1-sheet.png"
+dest_files=["res://.godot/imported/Sierv1-sheet.png-b43300aff3acd85f1c9f4d16559545ec.ctex"]
 
 [params]
 
