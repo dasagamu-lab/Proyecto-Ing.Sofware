@@ -439,12 +439,13 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Cielo Azul" type="Sprite2D" parent="ParallaxBackground/Cielo Azul" unique_id=1875352717]
 texture_filter = 1
+position = Vector2(-110, -4)
 texture = ExtResource("2_qpf10")
 centered = false
 
 [node name="Cielo Azul2" type="Sprite2D" parent="ParallaxBackground/Cielo Azul" unique_id=692141119]
 texture_filter = 1
-position = Vector2(640, 0)
+position = Vector2(460, -8)
 texture = ExtResource("2_qpf10")
 centered = false
 
@@ -456,12 +457,13 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Nubes" type="Sprite2D" parent="ParallaxBackground/Cielo" unique_id=681076667]
 texture_filter = 1
+position = Vector2(-108, 6)
 texture = ExtResource("3_c14gr")
 centered = false
 
 [node name="Nubes2" type="Sprite2D" parent="ParallaxBackground/Cielo" unique_id=20938981]
 texture_filter = 1
-position = Vector2(640, 0)
+position = Vector2(532, 7)
 texture = ExtResource("3_c14gr")
 centered = false
 
@@ -473,6 +475,7 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Rocas" type="Sprite2D" parent="ParallaxBackground/Montañas" unique_id=795244008]
 texture_filter = 1
+position = Vector2(-115, 5)
 texture = ExtResource("4_ohd7x")
 centered = false
 
@@ -490,6 +493,7 @@ motion_mirroring = Vector2(320, 0)
 
 [node name="Cesped" type="Sprite2D" parent="ParallaxBackground/Cesped" unique_id=72751397]
 texture_filter = 1
+position = Vector2(-111, 0)
 texture = ExtResource("5_udymj")
 centered = false
 
@@ -511,7 +515,10 @@ scale = Vector2(1.4, 1.4)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1910011730]
 position = Vector2(213, 121)
-limit_top = 0
+limit_left = -10000122
+limit_top = -2
+limit_right = 9999878
+limit_bottom = 9999998
 
 [node name="Player" parent="." unique_id=1369458663 instance=ExtResource("10_064bs")]
 position = Vector2(180, 176)

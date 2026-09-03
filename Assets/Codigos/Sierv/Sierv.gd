@@ -8,12 +8,6 @@ class_name Sierv
 var counter_hit : int = 0
 var ataque_actual : String = ""
 
-# Limitadores
-
-# EFECTOS DASH
-var Time_Actual_Dupli : float = 0
-var Time_Dupli : float = 0.05
-var Time_Life_Dupli : float = 0.2
 
 func _input(event):
 	if estado == "Muerto":
@@ -32,7 +26,7 @@ func _input(event):
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 			estado = "Atacando"
 			ataque_actual = "Ataque_2P2"
-			_animaciones()
+			$AnimationPlayer.play(ataque_actual)
 
 	# NUEVA LÓGICA DE BLOQUEO
 	if Input.is_action_pressed("Bloqueo_P2"):
@@ -103,7 +97,7 @@ func _physics_process(delta):
 			Time_Actual_Dupli += delta
 			velocity.y = 0
 
-			var dir = -1 if mirror.flip_h else 1
+			var dir = sign(mirror.scale.x)
 			velocity.x = (intVX_Dash * dir) * delta
 
 			if Time_Actual_Dupli >= Time_Dupli:
@@ -120,13 +114,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _animaciones():
-	if estado == "Muerto":
-		return
-	if intMove == -1:
-		mirror.scale.x = -1
-	elif intMove == 1:
-		mirror.scale.x = 1
 
 
 	# Animaciones
@@ -141,7 +128,6 @@ func _animaciones():
 				ani.play("Jump" if velocity.y < 0 else "Fall")
 
 		"Agachado":
-			if ani.animaton != "Fase2_Agacharse":
 				ani.play("Fase1_Agacharse")
 
 		"Dash":
@@ -199,50 +185,11 @@ func crear_duplicado():
 	duplicado.queue_free()
 	
 
-func _ani_change():
-	if estado == "Muerto":
-		return
-	if ani.current_animation == "Hit":
-		ani.play("Idle")
-	ani.play("Hit")
-
-
-func Hit(posicion_atacante = null):
-	if estado == "Hit":
-		return
-
-	estado = "Hit"
-
-	if posicion_atacante != null:
-		if posicion_atacante.x < global_position.x:
-			velocity.x = fuerza_golpe
-		else:
-			velocity.x = -fuerza_golpe
-	else:
-		var dir = -1 if mirror.flip_h else 1
-		velocity.x = -dir * fuerza_golpe
-	ani.play("Hit")
-
-
-func _on_hurtbox_area_entered(area: Area2D):
-	print("SIERV RECIBIO GOLPE")
-	print(area.name)
-	print(area.get_groups())
-
-	if area.is_in_group("P_Punch"):
-		vida -= 10		
-		if vida <= 0:
-			vida = 0
-			estado = "Muerto"
-			
-			ani.play("Caida")
-		else:
-			Hit(area.global_position)
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	match ani.animation:
-		"Dash", "Dash_Aire":
+		"Dash_P2", "Dash_Aire":
 			estado = "Normal"
 			
 		"Slide":
@@ -252,15 +199,15 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 				estado = "Normal"
 			Can_Dash = 1
 			
-		"Ataque_1":
+		"Ataque_P2":
 			if counter_hit > 1:
 				counter_hit = 0
-				ani.play("Ataque_1")
+				ani.play("Ataque_P2")
 			else:
 				counter_hit = 0
 				estado = "Normal"
 				
-		"Ataque_2":
+		"Ataque_2P2":
 			counter_hit = 0
 			estado = "Normal"
 			

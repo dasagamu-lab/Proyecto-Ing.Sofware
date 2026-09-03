@@ -6,12 +6,8 @@ var Especial = preload("res://Assets/Escenas/Lum/especial.tscn")
 var counter_hit : int = 0
 var ataque_actual : String = ""
 
-# EFECTOS DASH (Visuales propios de Lum)
-var Time_Actual_Dupli : float = 0
-var Time_Dupli : float = 0.05
-var Time_Life_Dupli : float = 0.2
 
-var sprite_pos_atacando = Vector2.ZERO
+
 
 # ---------------------------------------------------------
 # CONTROLES Y FÍSICAS EXCLUSIVAS
@@ -114,13 +110,7 @@ func _physics_process(delta):
 # ---------------------------------------------------------
 # ANIMACIONES Y EFECTOS
 # ---------------------------------------------------------
-func _animaciones():
-	if intMove == -1:
-		mirror.scale.x = -1
-		$Col_Daño.scale.x = -1
-	elif intMove == 1:
-		mirror.scale.x = 1
-		$Col_Daño.scale.x = 1
+
 
 	match estado:
 		"Normal":
@@ -132,7 +122,6 @@ func _animaciones():
 			else:
 				ani.play("Jump" if velocity.y < 0 else "Fall")
 		"Agachado":
-			if ani.animation != "Fase2_Agacharse":
 				ani.play("Fase1_Agacharse")
 		"Dash":
 			if is_on_floor():

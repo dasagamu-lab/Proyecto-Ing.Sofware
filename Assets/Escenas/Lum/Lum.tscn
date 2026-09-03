@@ -105,10 +105,6 @@ shader_parameter/g = 0.0
 shader_parameter/b = 0.0
 shader_parameter/mix_color = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_srbgk"]
-atlas = ExtResource("3_46oj4")
-region = Rect2(0, 0, 46, 46)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_k60n8"]
 atlas = ExtResource("3_c7i6l")
 region = Rect2(0, 0, 70, 48)
@@ -226,10 +222,6 @@ atlas = ExtResource("6_vhphb")
 region = Rect2(184, 0, 46, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m70j3"]
-atlas = ExtResource("3_46oj4")
-region = Rect2(0, 0, 46, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x45gp"]
 atlas = ExtResource("3_46oj4")
 region = Rect2(0, 0, 46, 46)
 
@@ -371,14 +363,6 @@ region = Rect2(720, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vhphb"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_srbgk")
-}],
-"loop": 1,
-"name": &"Agacharse",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k60n8")
@@ -529,14 +513,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x45gp")
-}],
-"loop": 1,
-"name": &"Fase2_Agacharse",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_oedi1")
 }, {
 "duration": 1.0,
@@ -668,8 +644,7 @@ position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_vi86t")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1240543901]
-light_mask = 4
-visibility_layer = 2
+visibility_layer = 8
 collision_layer = 2
 collision_mask = 4
 
@@ -681,7 +656,7 @@ debug_color = Color(0.16317675, 0.23452586, 0.29956064, 0.41960785)
 
 [node name="Col_Daño" type="Area2D" parent="." unique_id=2050569901 groups=["P_Punch"]]
 collision_layer = 2
-collision_mask = 4
+collision_mask = 0
 
 [node name="Ataque_1" type="CollisionShape2D" parent="Col_Daño" unique_id=1189079468]
 texture_filter = 1
@@ -702,8 +677,7 @@ libraries/ = SubResource("AnimationLibrary_46oj4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2098702610]
 material = SubResource("ShaderMaterial_yehu8")
 sprite_frames = SubResource("SpriteFrames_vhphb")
-animation = &"Ataque_1"
-frame = 7
+animation = &"Hit"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

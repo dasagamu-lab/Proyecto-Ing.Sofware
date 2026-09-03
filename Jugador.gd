@@ -10,6 +10,13 @@ var Jump_Height : int = 240
 var max_coyote_time : float = 0.2
 var coyote_time : float = 0.0
 
+var Time_Actual_Dupli : float = 0
+var Time_Dupli : float = 0.05
+var Time_Life_Dupli : float = 0.2
+
+var sprite_pos_atacando = Vector2.ZERO
+
+
 # ESTADÍSTICAS GLOBALES
 var vida : int = 100
 var fuerza_golpe : int = 120
@@ -64,3 +71,11 @@ func _ani_change():
 	if ani.current_animation == "Hit":
 		ani.play("Idle")
 	ani.play("Hit")
+	
+func _animaciones():
+	if intMove == -1:
+		mirror.scale.x = -1
+		$Col_Daño.scale.x = -1
+	elif intMove == 1:
+		mirror.scale.x = 1
+		$Col_Daño.scale.x = 1
