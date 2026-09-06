@@ -42,7 +42,7 @@ func _physics_process(delta):
 		return
 
 	if Input.is_action_just_pressed("Especial_P2"):
-		if estado != "Atacando" and estado != "Dash":
+		if estado != "Atacando" and estado != "Dash_P2":
 			estado = "Especial_P2"
 #			crear_especial()
 
@@ -93,10 +93,9 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.y = 0
 
-		"Dash":
+		"Dash_P2":
 			Time_Actual_Dupli += delta
 			velocity.y = 0
-
 			var dir = sign(mirror.scale.x)
 			velocity.x = (intVX_Dash * dir) * delta
 
@@ -130,20 +129,20 @@ func _physics_process(delta):
 		"Agachado":
 				ani.play("Fase1_Agacharse")
 
-		"Dash":
+		"Dash_P2":
 			if is_on_floor():
 				if Input.is_action_pressed("Abajo"): 
 					ani.play("Slide",1.8)
 				else:
-					ani.play("Dash_Smoke_Ground",2.5)
+					ani.play("Dash_P2",2.5)
 			else:
-				ani.play("Dash_Air")
+				ani.play("Dash_Aire")
 
 		"Atacando":
 			ani.play(ataque_actual, 1.8)
 
 		"Bloqueando":
-			ani.play("Bloqueo")
+			ani.play("Bloqueo_P2")
 			
 		"Especial_2": 
 			ani.play("Especial_2")

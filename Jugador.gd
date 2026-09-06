@@ -1,6 +1,11 @@
 extends CharacterBody2D
 class_name Jugador
 
+@export var player_id : int = 1 
+
+
+
+
 # VELOCIDADES Y FÍSICAS (Compartidas)
 var intVX : int = 10000
 var intVY : int = 480
@@ -34,21 +39,22 @@ var Can_Dash : int = 2
 
 
 func Hit(posicion_atacante = null):
-	if estado == "Muerto" or estado == "Hit":
-		return
+		if estado == "Muerto" or estado == "Hit":
+			return
 
-	estado = "Hit"
+		estado = "Hit"
 
-	if posicion_atacante != null:
-		if posicion_atacante.x < global_position.x:
-			velocity.x = fuerza_golpe
+		if posicion_atacante != null:
+			if posicion_atacante.x < global_position.x:
+				velocity.x = fuerza_golpe
+			else:
+				velocity.x = -fuerza_golpe
 		else:
-			velocity.x = -fuerza_golpe
-	else:
-		var dir = -1 if mirror.flip_h else 1
-		velocity.x = -dir * fuerza_golpe
+			var dir = -1 if mirror.flip_h else 1
+			velocity.x = -dir * fuerza_golpe
 
-	ani.play("Hit")
+		ani.play("Hit")
+
 
 func _on_hurtbox_area_entered(area: Area2D):
 	print(name + " RECIBIO GOLPE")

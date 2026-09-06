@@ -449,9 +449,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b67ys")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8m2vw")
 }],
 "loop": 0,
 "name": &"Dash_Aire",
@@ -646,7 +643,7 @@ shape = SubResource("RectangleShape2D_vi86t")
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1240543901]
 visibility_layer = 8
 collision_layer = 2
-collision_mask = 4
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=799996473]
 light_mask = 0
@@ -655,7 +652,7 @@ shape = SubResource("RectangleShape2D_sx5k5")
 debug_color = Color(0.16317675, 0.23452586, 0.29956064, 0.41960785)
 
 [node name="Col_Daño" type="Area2D" parent="." unique_id=2050569901 groups=["P_Punch"]]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 
 [node name="Ataque_1" type="CollisionShape2D" parent="Col_Daño" unique_id=1189079468]
@@ -677,7 +674,7 @@ libraries/ = SubResource("AnimationLibrary_46oj4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2098702610]
 material = SubResource("ShaderMaterial_yehu8")
 sprite_frames = SubResource("SpriteFrames_vhphb")
-animation = &"Hit"
+animation = &"Dash_Aire"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

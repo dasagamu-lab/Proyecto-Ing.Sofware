@@ -6,9 +6,6 @@ var Especial = preload("res://Assets/Escenas/Lum/especial.tscn")
 var counter_hit : int = 0
 var ataque_actual : String = ""
 
-
-
-
 # ---------------------------------------------------------
 # CONTROLES Y FÍSICAS EXCLUSIVAS
 # ---------------------------------------------------------
@@ -16,14 +13,14 @@ func _input(event):
 	if Input.is_action_just_pressed("Atacar"):
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 			estado = "Atacando"
-			ataque_actual = "Ataque_1"
+			ataque_actual = "ataque_debil_P1"
 			ani.play(ataque_actual, 1.8)
 			$AnimationPlayer.play(ataque_actual)
 
-	if Input.is_action_just_pressed("Ataque_2"):
+	if Input.is_action_just_pressed("ataque_debil_P1"):
 		if is_on_floor() and estado != "Bloqueando" and estado != "Atacando":
 			estado = "Atacando"
-			ataque_actual = "Ataque_2"
+			ataque_actual = "ataque_medio_P2"
 			ani.play(ataque_actual, 1.8)
 			$AnimationPlayer.play(ataque_actual)
 
