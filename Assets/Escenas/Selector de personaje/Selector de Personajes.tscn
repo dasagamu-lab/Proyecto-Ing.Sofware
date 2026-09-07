@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bm430dw5afp6x"]
+
+[ext_resource type="Script" uid="uid://d4gl0wr081qcn" path="res://Assets/Escenas/Selector de personaje/Administrador_Pesonaje.gd.gd" id="1_530cs"]
+
+[node name="Selector de Personaje" type="Control" unique_id=1062636859]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_530cs")
+
+[node name="P1Panel" type="VBoxContainer" parent="." unique_id=1766718483]
+layout_mode = 0
+offset_right = 74.0
+offset_bottom = 32.0
+
+[node name="Jugador1" type="Label" parent="P1Panel" unique_id=1511612104]
+layout_mode = 2
+text = "Jugador 1"
+
+[node name="BotonLum" type="Button" parent="P1Panel/Jugador1" unique_id=1899538363]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 34.0
+offset_right = 118.0
+offset_bottom = 65.0
+text = "Lum"
+
+[node name="ButtonSierv" type="Button" parent="P1Panel/Jugador1" unique_id=1298371798]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 56.0
+offset_bottom = 141.0
+text = "Sierv"
+
+[node name="Label" type="Label" parent="P1Panel/Jugador1" unique_id=462407760]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 47.0
+offset_right = 48.0
+offset_bottom = 70.0
+
+[node name="P2Panel" type="VBoxContainer" parent="." unique_id=1456818631]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 74.0
+offset_bottom = 32.0
+
+[node name="Jugador2" type="Label" parent="P2Panel" unique_id=2033227960]
+layout_mode = 2
+text = "Jugador 1"
+
+[node name="BotonLum" type="Button" parent="P2Panel/Jugador2" unique_id=1762289198]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 134.0
+text = "Lum"
+
+[node name="ButtonSierv" type="Button" parent="P2Panel/Jugador2" unique_id=451811846]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 29.0
+offset_right = 56.0
+offset_bottom = 60.0
+text = "Sierv"
+
+[node name="Label" type="Label" parent="P2Panel/Jugador2" unique_id=1252174321]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 26.0
+offset_right = 199.0
+offset_bottom = 49.0
+
+[node name="BotonConfirmar" type="Button" parent="." unique_id=1403939958]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 80.0
+offset_right = 210.0
+offset_bottom = 111.0
+text = "Emepzar"

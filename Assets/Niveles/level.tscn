@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dqa20bbm4lsr8"]
 
+[ext_resource type="Script" uid="uid://cqn54df5trdgd" path="res://Assets/Codigos/level.gd" id="1_cig5t"]
 [ext_resource type="Script" uid="uid://yk2voomt4her" path="res://Assets/Fondos/ParallaxBackground.gd" id="1_tjmcr"]
 [ext_resource type="Texture2D" uid="uid://c7wxv75ewk8uw" path="res://Assets/Fondos/Backgrounds/Sky.png" id="2_qpf10"]
 [ext_resource type="Texture2D" uid="uid://c5h8kqca5qfts" path="res://Assets/Fondos/Backgrounds/Clouds.png" id="3_c14gr"]
@@ -9,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dpjwc1hpf736s" path="res://Assets/Otros/Tiles/Tileset Inside.png" id="7_m6k0b"]
 [ext_resource type="Texture2D" uid="uid://dhwcqlhtcmtgg" path="res://Assets/Otros/Tiles/Trees.png" id="8_gohss"]
 [ext_resource type="PackedScene" uid="uid://byems0y0avw02" path="res://Assets/Escenas/Dummy/dummy.tscn" id="9_suywx"]
-[ext_resource type="PackedScene" uid="uid://xj2kv1mm05vc" path="res://Assets/Escenas/Lum/Lum.tscn" id="10_064bs"]
-[ext_resource type="PackedScene" uid="uid://4psgqxndekeh" path="res://Assets/Escenas/Sierv/Sierv.tscn" id="11_70tcc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic3r3"]
 texture = ExtResource("6_atref")
@@ -429,6 +428,7 @@ sources/1 = SubResource("TileSetAtlasSource_ndl0x")
 sources/2 = SubResource("TileSetAtlasSource_blqgl")
 
 [node name="Level" type="Node2D" unique_id=490680624]
+script = ExtResource("1_cig5t")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1596364532]
 script = ExtResource("1_tjmcr")
@@ -520,8 +520,8 @@ limit_top = -2
 limit_right = 9999878
 limit_bottom = 9999998
 
-[node name="Player" parent="." unique_id=1369458663 instance=ExtResource("10_064bs")]
-position = Vector2(180, 176)
+[node name="Spawn1" type="Marker2D" parent="." unique_id=1807731498]
+position = Vector2(165, 192)
 
-[node name="Player2" parent="." unique_id=1972453486 instance=ExtResource("11_70tcc")]
-position = Vector2(263, 175)
+[node name="Spawn2" type="Marker2D" parent="." unique_id=1847885614]
+position = Vector2(269, 193)
