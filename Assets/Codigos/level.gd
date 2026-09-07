@@ -18,3 +18,4 @@ func spawnear_jugador(escena: PackedScene, id: int, punto_spawn: Node2D):
 	jugador.name = "Player" if id == 1 else "Player2"
 	jugador.global_position = punto_spawn.global_position
 	add_child(jugador)
+	jugador.mirar_hacia(1 if id == 1 else -1)

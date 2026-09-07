@@ -113,3 +113,8 @@ func _animaciones():
 	elif intMove == 1:
 		mirror.scale.x = 1
 		$Col_Daño.scale.x = 1
+		
+		
+func mirar_hacia(dir: int):
+	mirror.scale.x = dir
+	$Col_Daño.scale.x = dir

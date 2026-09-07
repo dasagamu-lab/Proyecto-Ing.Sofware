@@ -1,81 +1,59 @@
 [gd_scene format=3 uid="uid://bm430dw5afp6x"]
 
-[ext_resource type="Script" uid="uid://d4gl0wr081qcn" path="res://Assets/Escenas/Selector de personaje/Administrador_Pesonaje.gd.gd" id="1_530cs"]
+[ext_resource type="Script" uid="uid://br3sg0x5vt6mr" path="res://Assets/Codigos/Selector_de_personajes.gd" id="1_530cs"]
+[ext_resource type="Texture2D" uid="uid://d2hgye73dndcn" path="res://Assets/Personajes/Lum/Lum.png" id="2_sspsk"]
+[ext_resource type="Texture2D" uid="uid://bxyndbjk2kaqg" path="res://Assets/Personajes/Sierv/Sierv.png" id="3_cbyd6"]
 
-[node name="Selector de Personaje" type="Control" unique_id=1062636859]
+[node name="Selector de Personaje" type="Control" unique_id=1373439706]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_530cs")
+texturas = Array[Texture2D]([ExtResource("2_sspsk"), ExtResource("3_cbyd6")])
 
-[node name="P1Panel" type="VBoxContainer" parent="." unique_id=1766718483]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1738149318]
 layout_mode = 0
-offset_right = 74.0
-offset_bottom = 32.0
+offset_right = 426.0
+offset_bottom = 238.0
+color = Color(0, 1, 1, 1)
 
-[node name="Jugador1" type="Label" parent="P1Panel" unique_id=1511612104]
-layout_mode = 2
-text = "Jugador 1"
-
-[node name="BotonLum" type="Button" parent="P1Panel/Jugador1" unique_id=1899538363]
+[node name="LabelTurno" type="Label" parent="." unique_id=1966888]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 34.0
-offset_right = 118.0
-offset_bottom = 65.0
-text = "Lum"
+offset_left = 132.0
+offset_top = 15.0
+offset_right = 284.0
+offset_bottom = 57.0
 
-[node name="ButtonSierv" type="Button" parent="P1Panel/Jugador1" unique_id=1298371798]
+[node name="Vista" type="TextureRect" parent="." unique_id=1918755517]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 110.0
-offset_right = 56.0
-offset_bottom = 141.0
-text = "Sierv"
+offset_left = 60.0
+offset_top = -77.0
+offset_right = 328.0
+offset_bottom = 198.0
 
-[node name="Label" type="Label" parent="P1Panel/Jugador1" unique_id=462407760]
+[node name="Anterior" type="Button" parent="." unique_id=1657771259]
 layout_mode = 0
-offset_left = -13.0
-offset_top = 47.0
-offset_right = 48.0
-offset_bottom = 70.0
+offset_left = 125.0
+offset_top = 106.0
+offset_right = 143.0
+offset_bottom = 137.0
+text = "<"
 
-[node name="P2Panel" type="VBoxContainer" parent="." unique_id=1456818631]
+[node name="Siguiente" type="Button" parent="." unique_id=1080987958]
 layout_mode = 0
-offset_top = 9.0
-offset_right = 74.0
-offset_bottom = 32.0
+offset_left = 267.0
+offset_top = 107.0
+offset_right = 285.0
+offset_bottom = 138.0
+text = ">"
 
-[node name="Jugador2" type="Label" parent="P2Panel" unique_id=2033227960]
-layout_mode = 2
-text = "Jugador 1"
-
-[node name="BotonLum" type="Button" parent="P2Panel/Jugador2" unique_id=1762289198]
+[node name="Seleccionar" type="Button" parent="." unique_id=772925701]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 90.0
-offset_right = 120.0
-offset_bottom = 134.0
-text = "Lum"
-
-[node name="ButtonSierv" type="Button" parent="P2Panel/Jugador2" unique_id=451811846]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 29.0
-offset_right = 56.0
-offset_bottom = 60.0
-text = "Sierv"
-
-[node name="Label" type="Label" parent="P2Panel/Jugador2" unique_id=1252174321]
-layout_mode = 0
-offset_left = 138.0
-offset_top = 26.0
-offset_right = 199.0
-offset_bottom = 49.0
-
-[node name="BotonConfirmar" type="Button" parent="." unique_id=1403939958]
-layout_mode = 0
-offset_left = 134.0
-offset_top = 80.0
-offset_right = 210.0
-offset_bottom = 111.0
-text = "Emepzar"
+offset_left = 144.0
+offset_top = 156.0
+offset_right = 268.0
+offset_bottom = 187.0
+text = "Selecionar"
